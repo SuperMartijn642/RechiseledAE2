@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "rechiseledae:block/certus_quartz_block_cut_small_tiles"
+  }
+}

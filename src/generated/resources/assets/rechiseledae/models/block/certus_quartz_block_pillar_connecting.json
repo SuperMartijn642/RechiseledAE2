@@ -1,0 +1,19 @@
+{
+  "type": "fusion:connecting",
+  "parent": "minecraft:block/cube",
+  "connections": [
+    {
+      "type": "fusion:is_same_state"
+    }
+  ],
+  "loader": "fusion:model",
+  "textures": {
+    "down": "rechiseledae:block/certus_quartz_block_pillar_end",
+    "east": "rechiseledae:block/certus_quartz_block_pillar_side",
+    "north": "rechiseledae:block/certus_quartz_block_pillar_side",
+    "particle": "rechiseledae:block/certus_quartz_block_pillar_side",
+    "south": "rechiseledae:block/certus_quartz_block_pillar_side",
+    "up": "rechiseledae:block/certus_quartz_block_pillar_end",
+    "west": "rechiseledae:block/certus_quartz_block_pillar_side"
+  }
+}

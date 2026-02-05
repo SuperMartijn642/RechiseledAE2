@@ -1,0 +1,50 @@
+{
+  "type": "rechiseled:chiseling",
+  "entries": [
+    {
+      "connecting_item": "rechiseledae:fluix_block_bordered_connecting",
+      "item": "rechiseledae:fluix_block_bordered"
+    },
+    {
+      "connecting_item": "rechiseledae:fluix_block_bricks_connecting",
+      "item": "rechiseledae:fluix_block_bricks"
+    },
+    {
+      "item": "rechiseledae:fluix_block_checkerboard"
+    },
+    {
+      "connecting_item": "rechiseledae:fluix_block_connecting_connecting",
+      "item": "ae2:fluix_block"
+    },
+    {
+      "item": "rechiseledae:fluix_block_crushed"
+    },
+    {
+      "item": "rechiseledae:fluix_block_decorated"
+    },
+    {
+      "item": "rechiseledae:fluix_block_diagonal_tiles"
+    },
+    {
+      "connecting_item": "rechiseledae:fluix_block_enchanted_connecting",
+      "item": "rechiseledae:fluix_block_enchanted"
+    },
+    {
+      "item": "rechiseledae:fluix_block_smooth"
+    },
+    {
+      "item": "rechiseledae:fluix_block_squares"
+    },
+    {
+      "item": "rechiseledae:fluix_block_swirling"
+    },
+    {
+      "connecting_item": "rechiseledae:fluix_block_tiles_connecting",
+      "item": "rechiseledae:fluix_block_tiles"
+    },
+    {
+      "item": "rechiseledae:fluix_block_woven"
+    }
+  ],
+  "overwrite": false
+}

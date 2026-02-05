@@ -1,0 +1,9 @@
+{
+  "type": "rechiseled:chiseling",
+  "entries": [
+    {
+      "item": "ae2:quartz_vibrant_glass"
+    }
+  ],
+  "overwrite": false
+}
