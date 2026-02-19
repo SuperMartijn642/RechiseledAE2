@@ -1,0 +1,6 @@
+{
+  "parent": "rechiseledae:block/chiseling_pattern_encoder",
+  "textures": {
+    "all": "rechiseledae:block/chiseling_pattern_encoder_off"
+  }
+}

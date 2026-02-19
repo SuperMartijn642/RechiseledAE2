@@ -2,6 +2,18 @@
   "sources": [
     {
       "type": "minecraft:single",
+      "resource": "rechiseledae:block/chiseling_pattern_encoder_off"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/chiseling_pattern_encoder"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:item/chiseling_pattern"
+    },
+    {
+      "type": "minecraft:single",
       "resource": "rechiseledae:block/certus_quartz_block_shiny"
     },
     {

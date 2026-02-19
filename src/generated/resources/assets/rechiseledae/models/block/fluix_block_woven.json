@@ -1,6 +1,12 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "all": "rechiseledae:block/fluix_block_woven"
+    "up": "rechiseledae:block/fluix_block_woven",
+    "down": "rechiseledae:block/fluix_block_woven",
+    "north": "rechiseledae:block/fluix_block_woven",
+    "east": "rechiseledae:block/fluix_block_woven",
+    "south": "rechiseledae:block/fluix_block_woven",
+    "west": "rechiseledae:block/fluix_block_woven",
+    "particle": "rechiseledae:block/fluix_block_woven"
   }
 }

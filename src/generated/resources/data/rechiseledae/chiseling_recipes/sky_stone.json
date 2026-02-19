@@ -1,18 +1,10 @@
 {
   "type": "rechiseled:chiseling",
   "entries": [
-    {
-      "item": "ae2:sky_stone_block"
-    },
-    {
-      "item": "ae2:smooth_sky_stone_block"
-    },
-    {
-      "item": "ae2:sky_stone_brick"
-    },
-    {
-      "item": "ae2:sky_stone_small_brick"
-    }
+    "ae2:sky_stone_block",
+    "ae2:smooth_sky_stone_block",
+    "ae2:sky_stone_brick",
+    "ae2:sky_stone_small_brick"
   ],
   "overwrite": false
 }

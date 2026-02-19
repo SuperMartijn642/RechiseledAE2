@@ -1,13 +1,101 @@
 {
   "type": "fusion:connecting",
-  "parent": "minecraft:block/cube_all",
-  "connections": [
-    {
-      "type": "fusion:is_same_block"
-    }
-  ],
+  "parent": "minecraft:block/cube",
+  "connections": {
+    "down": {
+      "type": "fusion:or",
+      "predicates": [
+        {
+          "type": "fusion:match_block",
+          "block": "rechiseledae:certus_quartz_block_cut_small_tiles_connecting"
+        },
+        {
+          "type": "fusion:or",
+          "predicates": []
+        },
+        {
+          "type": "fusion:or",
+          "predicates": []
+        }
+      ]
+    },
+    "east": "#side",
+    "north": "#side",
+    "side": {
+      "type": "fusion:or",
+      "predicates": [
+        {
+          "type": "fusion:match_block",
+          "block": "rechiseledae:certus_quartz_block_cut_small_tiles_connecting"
+        },
+        {
+          "type": "fusion:or",
+          "predicates": []
+        },
+        {
+          "type": "fusion:and",
+          "predicates": [
+            {
+              "type": "fusion:is_direction",
+              "directions": [
+                "top",
+                "top_left",
+                "top_right"
+              ]
+            },
+            {
+              "type": "fusion:or",
+              "predicates": []
+            }
+          ]
+        },
+        {
+          "type": "fusion:and",
+          "predicates": [
+            {
+              "type": "fusion:is_direction",
+              "directions": [
+                "bottom",
+                "bottom_left",
+                "bottom_right"
+              ]
+            },
+            {
+              "type": "fusion:or",
+              "predicates": []
+            }
+          ]
+        }
+      ]
+    },
+    "south": "#side",
+    "up": {
+      "type": "fusion:or",
+      "predicates": [
+        {
+          "type": "fusion:match_block",
+          "block": "rechiseledae:certus_quartz_block_cut_small_tiles_connecting"
+        },
+        {
+          "type": "fusion:or",
+          "predicates": []
+        },
+        {
+          "type": "fusion:or",
+          "predicates": []
+        }
+      ]
+    },
+    "west": "#side"
+  },
   "loader": "fusion:model",
   "textures": {
-    "all": "rechiseledae:block/certus_quartz_block_cut_small_tiles"
+    "down": "rechiseledae:block/certus_quartz_block_cut_small_tiles",
+    "east": "rechiseledae:block/certus_quartz_block_cut_small_tiles",
+    "north": "rechiseledae:block/certus_quartz_block_cut_small_tiles",
+    "particle": "rechiseledae:block/certus_quartz_block_cut_small_tiles",
+    "south": "rechiseledae:block/certus_quartz_block_cut_small_tiles",
+    "up": "rechiseledae:block/certus_quartz_block_cut_small_tiles",
+    "west": "rechiseledae:block/certus_quartz_block_cut_small_tiles"
   }
 }

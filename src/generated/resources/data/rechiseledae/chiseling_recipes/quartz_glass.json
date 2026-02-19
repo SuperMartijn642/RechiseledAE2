@@ -1,9 +1,7 @@
 {
   "type": "rechiseled:chiseling",
   "entries": [
-    {
-      "item": "ae2:quartz_glass"
-    }
+    "ae2:quartz_glass"
   ],
   "overwrite": false
 }

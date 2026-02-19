@@ -2,49 +2,33 @@
   "type": "rechiseled:chiseling",
   "entries": [
     {
-      "connecting_item": "rechiseledae:fluix_block_bordered_connecting",
-      "item": "rechiseledae:fluix_block_bordered"
+      "block": "rechiseledae:fluix_block_bordered",
+      "connecting_block": "rechiseledae:fluix_block_bordered_connecting"
     },
     {
-      "connecting_item": "rechiseledae:fluix_block_bricks_connecting",
-      "item": "rechiseledae:fluix_block_bricks"
+      "block": "rechiseledae:fluix_block_bricks",
+      "connecting_block": "rechiseledae:fluix_block_bricks_connecting"
     },
+    "rechiseledae:fluix_block_checkerboard",
     {
-      "item": "rechiseledae:fluix_block_checkerboard"
+      "block": "ae2:fluix_block",
+      "connecting_block": "rechiseledae:fluix_block_connecting_connecting"
     },
+    "rechiseledae:fluix_block_crushed",
+    "rechiseledae:fluix_block_decorated",
+    "rechiseledae:fluix_block_diagonal_tiles",
     {
-      "connecting_item": "rechiseledae:fluix_block_connecting_connecting",
-      "item": "ae2:fluix_block"
+      "block": "rechiseledae:fluix_block_enchanted",
+      "connecting_block": "rechiseledae:fluix_block_enchanted_connecting"
     },
+    "rechiseledae:fluix_block_smooth",
+    "rechiseledae:fluix_block_squares",
+    "rechiseledae:fluix_block_swirling",
     {
-      "item": "rechiseledae:fluix_block_crushed"
+      "block": "rechiseledae:fluix_block_tiles",
+      "connecting_block": "rechiseledae:fluix_block_tiles_connecting"
     },
-    {
-      "item": "rechiseledae:fluix_block_decorated"
-    },
-    {
-      "item": "rechiseledae:fluix_block_diagonal_tiles"
-    },
-    {
-      "connecting_item": "rechiseledae:fluix_block_enchanted_connecting",
-      "item": "rechiseledae:fluix_block_enchanted"
-    },
-    {
-      "item": "rechiseledae:fluix_block_smooth"
-    },
-    {
-      "item": "rechiseledae:fluix_block_squares"
-    },
-    {
-      "item": "rechiseledae:fluix_block_swirling"
-    },
-    {
-      "connecting_item": "rechiseledae:fluix_block_tiles_connecting",
-      "item": "rechiseledae:fluix_block_tiles"
-    },
-    {
-      "item": "rechiseledae:fluix_block_woven"
-    }
+    "rechiseledae:fluix_block_woven"
   ],
   "overwrite": false
 }

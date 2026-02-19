@@ -1,6 +1,12 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "all": "rechiseledae:block/fluix_block_tiles"
+    "up": "rechiseledae:block/fluix_block_tiles",
+    "down": "rechiseledae:block/fluix_block_tiles",
+    "north": "rechiseledae:block/fluix_block_tiles",
+    "east": "rechiseledae:block/fluix_block_tiles",
+    "south": "rechiseledae:block/fluix_block_tiles",
+    "west": "rechiseledae:block/fluix_block_tiles",
+    "particle": "rechiseledae:block/fluix_block_tiles"
   }
 }

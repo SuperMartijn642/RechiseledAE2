@@ -1,6 +1,12 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "all": "rechiseledae:block/certus_quartz_block_polished"
+    "up": "rechiseledae:block/certus_quartz_block_polished",
+    "down": "rechiseledae:block/certus_quartz_block_polished",
+    "north": "rechiseledae:block/certus_quartz_block_polished",
+    "east": "rechiseledae:block/certus_quartz_block_polished",
+    "south": "rechiseledae:block/certus_quartz_block_polished",
+    "west": "rechiseledae:block/certus_quartz_block_polished",
+    "particle": "rechiseledae:block/certus_quartz_block_polished"
   }
 }
