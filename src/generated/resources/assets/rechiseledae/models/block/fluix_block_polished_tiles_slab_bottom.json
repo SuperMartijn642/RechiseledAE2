@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "rechiseledae:block/fluix_block_polished_tiles",
+    "side": "rechiseledae:block/fluix_block_polished_tiles",
+    "top": "rechiseledae:block/fluix_block_polished_tiles"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "rechiseledae:sky_stone_block_bordered_diagonal_bricks_stairs",
+    "rechiseledae:sky_stone_block_bordered_diagonal_bricks_stairs_connecting",
+    "rechiseledae:sky_stone_block_bordered_squares_stairs",
+    "rechiseledae:sky_stone_block_bordered_squares_stairs_connecting",
+    "rechiseledae:sky_stone_block_bordered_stairs",
+    "rechiseledae:sky_stone_block_bordered_stairs_connecting",
+    "rechiseledae:sky_stone_block_brick_pattern_stairs",
+    "rechiseledae:sky_stone_block_brick_pattern_stairs_connecting",
+    "rechiseledae:sky_stone_block_brick_paving_stairs",
+    "rechiseledae:sky_stone_block_brick_paving_stairs_connecting",
+    "rechiseledae:sky_stone_block_bricks_stairs_connecting",
+    "rechiseledae:sky_stone_block_connecting_stairs_connecting",
+    "rechiseledae:sky_stone_block_diagonal_bricks_stairs",
+    "rechiseledae:sky_stone_block_rotated_bricks_stairs",
+    "rechiseledae:sky_stone_block_rotated_bricks_stairs_connecting",
+    "rechiseledae:sky_stone_block_small_bricks_stairs_connecting",
+    "rechiseledae:sky_stone_block_smooth_stairs",
+    "rechiseledae:sky_stone_block_squares_stairs",
+    "rechiseledae:sky_stone_block_tiles_stairs",
+    "rechiseledae:sky_stone_block_tiles_stairs_connecting"
+  ]
+}

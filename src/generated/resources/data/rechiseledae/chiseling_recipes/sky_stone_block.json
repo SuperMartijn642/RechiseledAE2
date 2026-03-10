@@ -1,0 +1,124 @@
+{
+  "type": "rechiseled:chiseling",
+  "entries": [
+    {
+      "block": "rechiseledae:sky_stone_block_bordered",
+      "connecting_block": "rechiseledae:sky_stone_block_bordered_connecting",
+      "connecting_slab": "rechiseledae:sky_stone_block_bordered_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:sky_stone_block_bordered_stairs_connecting",
+      "slab": "rechiseledae:sky_stone_block_bordered_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:sky_stone_block_bordered_stairs"
+    },
+    {
+      "block": "rechiseledae:sky_stone_block_bordered_diagonal_bricks",
+      "connecting_block": "rechiseledae:sky_stone_block_bordered_diagonal_bricks_connecting",
+      "connecting_slab": "rechiseledae:sky_stone_block_bordered_diagonal_bricks_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:sky_stone_block_bordered_diagonal_bricks_stairs_connecting",
+      "slab": "rechiseledae:sky_stone_block_bordered_diagonal_bricks_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:sky_stone_block_bordered_diagonal_bricks_stairs"
+    },
+    {
+      "block": "rechiseledae:sky_stone_block_bordered_squares",
+      "connecting_block": "rechiseledae:sky_stone_block_bordered_squares_connecting",
+      "connecting_slab": "rechiseledae:sky_stone_block_bordered_squares_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:sky_stone_block_bordered_squares_stairs_connecting",
+      "slab": "rechiseledae:sky_stone_block_bordered_squares_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:sky_stone_block_bordered_squares_stairs"
+    },
+    {
+      "block": "rechiseledae:sky_stone_block_brick_pattern",
+      "connecting_block": "rechiseledae:sky_stone_block_brick_pattern_connecting",
+      "connecting_slab": "rechiseledae:sky_stone_block_brick_pattern_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:sky_stone_block_brick_pattern_stairs_connecting",
+      "slab": "rechiseledae:sky_stone_block_brick_pattern_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:sky_stone_block_brick_pattern_stairs"
+    },
+    {
+      "block": "rechiseledae:sky_stone_block_brick_paving",
+      "connecting_block": "rechiseledae:sky_stone_block_brick_paving_connecting",
+      "connecting_slab": "rechiseledae:sky_stone_block_brick_paving_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:sky_stone_block_brick_paving_stairs_connecting",
+      "slab": "rechiseledae:sky_stone_block_brick_paving_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:sky_stone_block_brick_paving_stairs"
+    },
+    {
+      "block": "ae2:sky_stone_brick",
+      "connecting_block": "rechiseledae:sky_stone_block_bricks_connecting",
+      "connecting_slab": "rechiseledae:sky_stone_block_bricks_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:sky_stone_block_bricks_stairs_connecting",
+      "slab": "ae2:sky_stone_brick_slab",
+      "slab_worth": 0.5,
+      "stairs": "ae2:sky_stone_brick_stairs"
+    },
+    {
+      "block": "ae2:smooth_sky_stone_block",
+      "connecting_block": "rechiseledae:sky_stone_block_connecting_connecting",
+      "connecting_slab": "rechiseledae:sky_stone_block_connecting_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:sky_stone_block_connecting_stairs_connecting",
+      "slab": "ae2:smooth_sky_stone_slab",
+      "slab_worth": 0.5,
+      "stairs": "ae2:smooth_sky_stone_stairs"
+    },
+    {
+      "block": "rechiseledae:sky_stone_block_diagonal_bricks",
+      "slab": "rechiseledae:sky_stone_block_diagonal_bricks_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:sky_stone_block_diagonal_bricks_stairs"
+    },
+    {
+      "block": "rechiseledae:sky_stone_block_rotated_bricks",
+      "connecting_block": "rechiseledae:sky_stone_block_rotated_bricks_connecting",
+      "connecting_slab": "rechiseledae:sky_stone_block_rotated_bricks_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:sky_stone_block_rotated_bricks_stairs_connecting",
+      "slab": "rechiseledae:sky_stone_block_rotated_bricks_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:sky_stone_block_rotated_bricks_stairs"
+    },
+    {
+      "block": "ae2:sky_stone_small_brick",
+      "connecting_block": "rechiseledae:sky_stone_block_small_bricks_connecting",
+      "connecting_slab": "rechiseledae:sky_stone_block_small_bricks_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:sky_stone_block_small_bricks_stairs_connecting",
+      "slab": "ae2:sky_stone_small_brick_slab",
+      "slab_worth": 0.5,
+      "stairs": "ae2:sky_stone_small_brick_stairs"
+    },
+    {
+      "block": "rechiseledae:sky_stone_block_smooth",
+      "slab": "rechiseledae:sky_stone_block_smooth_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:sky_stone_block_smooth_stairs"
+    },
+    {
+      "block": "rechiseledae:sky_stone_block_squares",
+      "slab": "rechiseledae:sky_stone_block_squares_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:sky_stone_block_squares_stairs"
+    },
+    {
+      "block": "rechiseledae:sky_stone_block_tiles",
+      "connecting_block": "rechiseledae:sky_stone_block_tiles_connecting",
+      "connecting_slab": "rechiseledae:sky_stone_block_tiles_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:sky_stone_block_tiles_stairs_connecting",
+      "slab": "rechiseledae:sky_stone_block_tiles_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:sky_stone_block_tiles_stairs"
+    }
+  ],
+  "overwrite": false
+}

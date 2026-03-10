@@ -6,21 +6,40 @@
       "type": "fusion:or",
       "predicates": [
         {
+          "type": "fusion:or",
+          "predicates": [
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_pillar_connecting",
+              "properties": {
+                "axis": [
+                  "y"
+                ]
+              }
+            },
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_pillar_slab_connecting",
+              "properties": {
+                "type": [
+                  "double"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "fusion:match_block",
+          "block": "rechiseledae:certus_quartz_block_pillar_stairs_connecting"
+        },
+        {
           "type": "fusion:match_state",
-          "block": "rechiseledae:certus_quartz_block_pillar_connecting",
+          "block": "rechiseledae:certus_quartz_block_pillar_slab_connecting",
           "properties": {
-            "axis": [
-              "y"
+            "type": [
+              "bottom"
             ]
           }
-        },
-        {
-          "type": "fusion:or",
-          "predicates": []
-        },
-        {
-          "type": "fusion:or",
-          "predicates": []
         }
       ]
     },
@@ -30,17 +49,31 @@
       "type": "fusion:or",
       "predicates": [
         {
-          "type": "fusion:match_state",
-          "block": "rechiseledae:certus_quartz_block_pillar_connecting",
-          "properties": {
-            "axis": [
-              "y"
-            ]
-          }
+          "type": "fusion:or",
+          "predicates": [
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_pillar_connecting",
+              "properties": {
+                "axis": [
+                  "y"
+                ]
+              }
+            },
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_pillar_slab_connecting",
+              "properties": {
+                "type": [
+                  "double"
+                ]
+              }
+            }
+          ]
         },
         {
-          "type": "fusion:or",
-          "predicates": []
+          "type": "fusion:match_block",
+          "block": "rechiseledae:certus_quartz_block_pillar_stairs_connecting"
         },
         {
           "type": "fusion:and",
@@ -54,8 +87,13 @@
               ]
             },
             {
-              "type": "fusion:or",
-              "predicates": []
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_pillar_slab_connecting",
+              "properties": {
+                "type": [
+                  "bottom"
+                ]
+              }
             }
           ]
         },
@@ -71,8 +109,13 @@
               ]
             },
             {
-              "type": "fusion:or",
-              "predicates": []
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_pillar_slab_connecting",
+              "properties": {
+                "type": [
+                  "top"
+                ]
+              }
             }
           ]
         }
@@ -83,21 +126,40 @@
       "type": "fusion:or",
       "predicates": [
         {
+          "type": "fusion:or",
+          "predicates": [
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_pillar_connecting",
+              "properties": {
+                "axis": [
+                  "y"
+                ]
+              }
+            },
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_pillar_slab_connecting",
+              "properties": {
+                "type": [
+                  "double"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "fusion:match_block",
+          "block": "rechiseledae:certus_quartz_block_pillar_stairs_connecting"
+        },
+        {
           "type": "fusion:match_state",
-          "block": "rechiseledae:certus_quartz_block_pillar_connecting",
+          "block": "rechiseledae:certus_quartz_block_pillar_slab_connecting",
           "properties": {
-            "axis": [
-              "y"
+            "type": [
+              "top"
             ]
           }
-        },
-        {
-          "type": "fusion:or",
-          "predicates": []
-        },
-        {
-          "type": "fusion:or",
-          "predicates": []
         }
       ]
     },

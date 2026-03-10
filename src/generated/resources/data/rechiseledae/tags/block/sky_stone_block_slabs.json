@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "rechiseledae:sky_stone_block_bordered_diagonal_bricks_slab",
+    "rechiseledae:sky_stone_block_bordered_diagonal_bricks_slab_connecting",
+    "rechiseledae:sky_stone_block_bordered_slab",
+    "rechiseledae:sky_stone_block_bordered_slab_connecting",
+    "rechiseledae:sky_stone_block_bordered_squares_slab",
+    "rechiseledae:sky_stone_block_bordered_squares_slab_connecting",
+    "rechiseledae:sky_stone_block_brick_pattern_slab",
+    "rechiseledae:sky_stone_block_brick_pattern_slab_connecting",
+    "rechiseledae:sky_stone_block_brick_paving_slab",
+    "rechiseledae:sky_stone_block_brick_paving_slab_connecting",
+    "rechiseledae:sky_stone_block_bricks_slab_connecting",
+    "rechiseledae:sky_stone_block_connecting_slab_connecting",
+    "rechiseledae:sky_stone_block_diagonal_bricks_slab",
+    "rechiseledae:sky_stone_block_rotated_bricks_slab",
+    "rechiseledae:sky_stone_block_rotated_bricks_slab_connecting",
+    "rechiseledae:sky_stone_block_small_bricks_slab_connecting",
+    "rechiseledae:sky_stone_block_smooth_slab",
+    "rechiseledae:sky_stone_block_squares_slab",
+    "rechiseledae:sky_stone_block_tiles_slab",
+    "rechiseledae:sky_stone_block_tiles_slab_connecting"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "rechiseledae:fluix_block_bricks_stairs",
+    "rechiseledae:fluix_block_bricks_stairs_connecting",
+    "rechiseledae:fluix_block_checkerboard_stairs",
+    "rechiseledae:fluix_block_connecting_stairs_connecting",
+    "rechiseledae:fluix_block_crushed_stairs",
+    "rechiseledae:fluix_block_crushed_stairs_connecting",
+    "rechiseledae:fluix_block_enchanted_stairs",
+    "rechiseledae:fluix_block_enchanted_stairs_connecting",
+    "rechiseledae:fluix_block_polished_bordered_stairs",
+    "rechiseledae:fluix_block_polished_bordered_stairs_connecting",
+    "rechiseledae:fluix_block_polished_bricks_stairs",
+    "rechiseledae:fluix_block_polished_bricks_stairs_connecting",
+    "rechiseledae:fluix_block_polished_checkerboard_stairs",
+    "rechiseledae:fluix_block_polished_crushed_stairs",
+    "rechiseledae:fluix_block_polished_decorated_stairs",
+    "rechiseledae:fluix_block_polished_diagonal_tiles_stairs",
+    "rechiseledae:fluix_block_polished_enchanted_stairs",
+    "rechiseledae:fluix_block_polished_enchanted_stairs_connecting",
+    "rechiseledae:fluix_block_polished_smooth_stairs",
+    "rechiseledae:fluix_block_polished_squares_stairs",
+    "rechiseledae:fluix_block_polished_stairs",
+    "rechiseledae:fluix_block_polished_stairs_connecting",
+    "rechiseledae:fluix_block_polished_swirling_stairs",
+    "rechiseledae:fluix_block_polished_tiles_stairs",
+    "rechiseledae:fluix_block_polished_tiles_stairs_connecting",
+    "rechiseledae:fluix_block_polished_woven_stairs",
+    "rechiseledae:fluix_block_smooth_stairs",
+    "rechiseledae:fluix_block_swirling_stairs"
+  ]
+}

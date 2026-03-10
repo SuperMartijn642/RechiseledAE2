@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "rechiseledae:block/certus_quartz_block_rotated_bricks",
+    "down": "rechiseledae:block/certus_quartz_block_rotated_bricks",
+    "north": "rechiseledae:block/certus_quartz_block_rotated_bricks",
+    "east": "rechiseledae:block/certus_quartz_block_rotated_bricks",
+    "south": "rechiseledae:block/certus_quartz_block_rotated_bricks",
+    "west": "rechiseledae:block/certus_quartz_block_rotated_bricks",
+    "particle": "rechiseledae:block/certus_quartz_block_rotated_bricks"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "rechiseledae:block/certus_quartz_block_crystallized",
+    "side": "rechiseledae:block/certus_quartz_block_crystallized",
+    "top": "rechiseledae:block/certus_quartz_block_crystallized"
+  }
+}
