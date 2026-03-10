@@ -3,6 +3,8 @@ package com.supermartijn642.rechiseled.ae;
 import appeng.crafting.pattern.EncodedPatternItem;
 import com.supermartijn642.core.gui.WidgetContainerScreen;
 import com.supermartijn642.core.registry.ClientRegistrationHandler;
+import com.supermartijn642.core.render.CustomRendererBakedModelWrapper;
+import com.supermartijn642.rechiseled.ae.chiseling_pattern.ChiselingPatternEncoderItemRenderer;
 import com.supermartijn642.rechiseled.ae.chiseling_pattern.ChiselingPatternEncoderRenderer;
 import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.ChiselingPatternEncoderContainer;
 import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.ChiselingPatternEncoderScreen;
@@ -23,7 +25,7 @@ public class RechiseledAEClient {
             @Override
             protected void renderSlotContents(GuiGraphics graphics, ItemStack stack, Slot slot, @Nullable String count){
                 // For encoded pattern slot, override the displayed item
-                if(slot == this.container.encodedPatternSlot && stack.getItem() instanceof EncodedPatternItem pattern){
+                if(slot == this.container.encodedPatternSlot && stack.getItem() instanceof EncodedPatternItem<?> pattern){
                     ItemStack output = pattern.getOutput(stack);
                     if(!output.isEmpty() && output != stack)
                         stack = output;
@@ -31,5 +33,7 @@ public class RechiseledAEClient {
                 super.renderSlotContents(graphics, stack, slot, count);
             }
         });
+        handler.registerCustomItemRenderer(() -> RechiseledAE.chiseling_pattern_encoder.asItem(), ChiselingPatternEncoderItemRenderer::new);
+        handler.registerItemModelOverwrite(() -> RechiseledAE.chiseling_pattern_encoder.asItem(), CustomRendererBakedModelWrapper::wrap);
     }
 }
