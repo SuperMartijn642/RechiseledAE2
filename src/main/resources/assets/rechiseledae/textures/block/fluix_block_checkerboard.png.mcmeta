@@ -1,8 +1,4 @@
 {
-  "fusion": {
-    "type": "connecting",
-    "layout": "horizontal"
-  },
   "animation": {
     "interpolate": true,
     "frames": [
