@@ -15,9 +15,7 @@ public class RechiseledAERecipes {
 
     public static final ResourceLocation CERTUS_QUARTZ_BLOCK = location("certus_quartz_block");
     public static final ResourceLocation FLUIX_BLOCK = location("fluix_block");
-    public static final ResourceLocation QUARTZ_GLASS = location("quartz_glass");
-    public static final ResourceLocation SKY_STONE = location("sky_stone");
-    public static final ResourceLocation VIBRANT_QUARTZ_GLASS = location("vibrant_quartz_glass");
+    public static final ResourceLocation SKY_STONE_BLOCK = location("sky_stone_block");
 
     private static ResourceLocation location(String name){
         return ResourceLocation.fromNamespaceAndPath(RechiseledAE.MODID, name);
@@ -34,34 +32,9 @@ public class RechiseledAERecipes {
 
     public static void init(){
         // Certus quartz block
-        regularBlockOnly(CERTUS_QUARTZ_BLOCK, getBlock("ae2:quartz_block"));
-        regularBlockOnly(CERTUS_QUARTZ_BLOCK, getBlock("ae2:smooth_quartz_block"));
-        regularBlockOnly(CERTUS_QUARTZ_BLOCK, getBlock("ae2:chiseled_quartz_block"));
-        // Quartz glass
-        regularBlockOnly(QUARTZ_GLASS, getBlock("ae2:quartz_glass"));
-        // Sky stone
-        regularBlockOnly(SKY_STONE, getBlock("ae2:sky_stone_block"));
-        regularBlockOnly(SKY_STONE, getBlock("ae2:smooth_sky_stone_block"));
-        regularBlockOnly(SKY_STONE, getBlock("ae2:sky_stone_brick"));
-        regularBlockOnly(SKY_STONE, getBlock("ae2:sky_stone_small_brick"));
-        // Vibrant quartz glass
-        regularBlockOnly(VIBRANT_QUARTZ_GLASS, getBlock("ae2:quartz_vibrant_glass"));
-    }
-
-    private static void regularBlockOnly(ResourceLocation recipe, Supplier<ItemLike> block){
-        REGISTRATION.chiselingEntry(recipe, entry -> entry.regularBlock(block.get()));
-    }
-
-    private static void regularBlockOnly(ResourceLocation recipe, String blockIdentifier){
-        regularBlockOnly(recipe, getBlock(blockIdentifier));
-    }
-
-    private static void connectingBlockOnly(ResourceLocation recipe, Supplier<ItemLike> block){
-        REGISTRATION.chiselingEntry(recipe, entry -> entry.connectingBlock(block.get()));
-    }
-
-    private static void connectingBlockOnly(ResourceLocation recipe, String blockIdentifier){
-        connectingBlockOnly(recipe, getBlock(blockIdentifier));
+        regularSet(CERTUS_QUARTZ_BLOCK, "ae2:quartz_block", "ae2:quartz_stairs", "ae2:quartz_slab");
+        regularSet(CERTUS_QUARTZ_BLOCK, "ae2:smooth_quartz_block", "ae2:smooth_quartz_stairs", "ae2:smooth_quartz_slab");
+        regularSet(CERTUS_QUARTZ_BLOCK, "ae2:chiseled_quartz_block", "ae2:chiseled_quartz_stairs", "ae2:chiseled_quartz_slab");
     }
 
     private static void regularSet(ResourceLocation recipe, String blockIdentifier, String stairsIdentifier, String slabIdentifier){
@@ -73,9 +46,5 @@ public class RechiseledAERecipes {
             entry.regularStairs(stairs.get());
             entry.regularSlab(slab.get());
         });
-    }
-
-    private static void regularSet(ResourceLocation recipe, String identifier){
-        regularSet(recipe, identifier, identifier + "_stairs", identifier + "_slab");
     }
 }
