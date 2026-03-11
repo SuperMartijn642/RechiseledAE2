@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    "CDC"
+  ],
+  "key": {
+    "A": {
+      "tag": "c:glass_blocks"
+    },
+    "B": {
+      "item": "rechiseled:chisel"
+    },
+    "C": {
+      "tag": "c:iron_ingots"
+    },
+    "D": {
+      "tag": "c:copper_ingots"
+    }
+  },
+  "result": {
+    "item": "rechiseledae:chiseling_pattern_encoder"
+  }
+}

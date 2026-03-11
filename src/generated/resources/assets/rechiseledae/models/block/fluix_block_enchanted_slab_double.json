@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "rechiseledae:block/fluix_block_enchanted",
+    "down": "rechiseledae:block/fluix_block_enchanted",
+    "north": "rechiseledae:block/fluix_block_enchanted",
+    "east": "rechiseledae:block/fluix_block_enchanted",
+    "south": "rechiseledae:block/fluix_block_enchanted",
+    "west": "rechiseledae:block/fluix_block_enchanted",
+    "particle": "rechiseledae:block/fluix_block_enchanted"
+  }
+}

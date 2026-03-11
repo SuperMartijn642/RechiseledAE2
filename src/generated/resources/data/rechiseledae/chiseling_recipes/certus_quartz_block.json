@@ -1,79 +1,337 @@
 {
   "type": "rechiseled:chiseling",
   "entries": [
-    "ae2:quartz_block",
-    "ae2:smooth_quartz_block",
-    "ae2:chiseled_quartz_block",
+    {
+      "block": "ae2:quartz_block",
+      "slab": "ae2:quartz_slab",
+      "slab_worth": 0.5,
+      "stairs": "ae2:quartz_stairs"
+    },
+    {
+      "block": "ae2:smooth_quartz_block",
+      "slab": "ae2:smooth_quartz_slab",
+      "slab_worth": 0.5,
+      "stairs": "ae2:smooth_quartz_stairs"
+    },
+    {
+      "block": "ae2:chiseled_quartz_block",
+      "slab": "ae2:chiseled_quartz_slab",
+      "slab_worth": 0.5,
+      "stairs": "ae2:chiseled_quartz_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_brick_bordered",
+      "connecting_block": "rechiseledae:certus_quartz_block_brick_bordered_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_brick_bordered_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_brick_bordered_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_brick_bordered_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_brick_bordered_stairs"
+    },
     {
       "block": "ae2:quartz_bricks",
-      "connecting_block": "rechiseledae:certus_quartz_block_bricks_connecting"
+      "connecting_block": "rechiseledae:certus_quartz_block_bricks_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_bricks_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_bricks_stairs_connecting",
+      "slab": "ae2:quartz_brick_slab",
+      "slab_worth": 0.5,
+      "stairs": "ae2:quartz_brick_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_chiseled",
+      "slab": "rechiseledae:certus_quartz_block_chiseled_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_chiseled_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_crystallized",
+      "slab": "rechiseledae:certus_quartz_block_crystallized_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_crystallized_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_crystallized_bordered",
+      "connecting_block": "rechiseledae:certus_quartz_block_crystallized_bordered_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_crystallized_bordered_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_crystallized_bordered_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_crystallized_bordered_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_crystallized_bordered_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_crystallized_polished",
+      "connecting_block": "rechiseledae:certus_quartz_block_crystallized_polished_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_crystallized_polished_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_crystallized_polished_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_crystallized_polished_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_crystallized_polished_stairs"
     },
     {
       "block": "ae2:cut_quartz_block",
-      "connecting_block": "rechiseledae:certus_quartz_block_cut_connecting"
+      "connecting_block": "rechiseledae:certus_quartz_block_cut_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_cut_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_cut_stairs_connecting",
+      "slab": "ae2:cut_quartz_slab",
+      "slab_worth": 0.5,
+      "stairs": "ae2:cut_quartz_stairs"
     },
     {
-      "block": "rechiseledae:certus_quartz_block_cut_bordered",
-      "connecting_block": "rechiseledae:certus_quartz_block_cut_bordered_connecting"
+      "block": "rechiseledae:certus_quartz_block_diagonal_tiles",
+      "slab": "rechiseledae:certus_quartz_block_diagonal_tiles_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_diagonal_tiles_stairs"
     },
     {
-      "block": "rechiseledae:certus_quartz_block_cut_bricks",
-      "connecting_block": "rechiseledae:certus_quartz_block_cut_bricks_connecting"
+      "block": "rechiseledae:certus_quartz_block_diagonal_tiles_pillar",
+      "connecting_block": "rechiseledae:certus_quartz_block_diagonal_tiles_pillar_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_diagonal_tiles_pillar_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_diagonal_tiles_pillar_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_diagonal_tiles_pillar_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_diagonal_tiles_pillar_stairs"
     },
-    "rechiseledae:certus_quartz_block_cut_chiseled",
     {
-      "block": "rechiseledae:certus_quartz_block_cut_pattern",
-      "connecting_block": "rechiseledae:certus_quartz_block_cut_pattern_connecting"
+      "block": "rechiseledae:certus_quartz_block_pattern",
+      "connecting_block": "rechiseledae:certus_quartz_block_pattern_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_pattern_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_pattern_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_pattern_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_pattern_stairs"
     },
     {
-      "block": "rechiseledae:certus_quartz_block_cut_paving",
-      "connecting_block": "rechiseledae:certus_quartz_block_cut_paving_connecting"
+      "block": "rechiseledae:certus_quartz_block_paving",
+      "connecting_block": "rechiseledae:certus_quartz_block_paving_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_paving_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_paving_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_paving_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_paving_stairs"
     },
     {
       "block": "ae2:quartz_pillar",
-      "connecting_block": "rechiseledae:certus_quartz_block_cut_pillar_connecting"
-    },
-    {
-      "block": "rechiseledae:certus_quartz_block_cut_rotated_bricks",
-      "connecting_block": "rechiseledae:certus_quartz_block_cut_rotated_bricks_connecting"
-    },
-    {
-      "block": "rechiseledae:certus_quartz_block_cut_scales",
-      "connecting_block": "rechiseledae:certus_quartz_block_cut_scales_connecting"
-    },
-    {
-      "block": "rechiseledae:certus_quartz_block_cut_small_tiles",
-      "connecting_block": "rechiseledae:certus_quartz_block_cut_small_tiles_connecting"
-    },
-    {
-      "block": "rechiseledae:certus_quartz_block_cut_squares",
-      "connecting_block": "rechiseledae:certus_quartz_block_cut_squares_connecting"
-    },
-    {
-      "block": "rechiseledae:certus_quartz_block_cut_stripes",
-      "connecting_block": "rechiseledae:certus_quartz_block_cut_stripes_connecting"
-    },
-    {
-      "block": "rechiseledae:certus_quartz_block_cut_tiles",
-      "connecting_block": "rechiseledae:certus_quartz_block_cut_tiles_connecting"
-    },
-    "rechiseledae:certus_quartz_block_diagonal_tiles",
-    {
-      "block": "rechiseledae:certus_quartz_block_pillar",
-      "connecting_block": "rechiseledae:certus_quartz_block_pillar_connecting"
+      "connecting_block": "rechiseledae:certus_quartz_block_pillar_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_pillar_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_pillar_stairs_connecting",
+      "slab": "ae2:quartz_pillar_slab",
+      "slab_worth": 0.5,
+      "stairs": "ae2:quartz_pillar_stairs"
     },
     {
       "block": "rechiseledae:certus_quartz_block_polished",
-      "connecting_block": "rechiseledae:certus_quartz_block_polished_connecting"
+      "connecting_block": "rechiseledae:certus_quartz_block_polished_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_polished_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_polished_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_polished_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_polished_stairs"
     },
     {
-      "block": "rechiseledae:certus_quartz_block_shiny",
-      "connecting_block": "rechiseledae:certus_quartz_block_shiny_connecting"
+      "block": "rechiseledae:certus_quartz_block_polished_brick_bordered",
+      "connecting_block": "rechiseledae:certus_quartz_block_polished_brick_bordered_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_polished_brick_bordered_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_polished_brick_bordered_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_polished_brick_bordered_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_polished_brick_bordered_stairs"
     },
-    "rechiseledae:certus_quartz_block_smooth",
+    {
+      "block": "rechiseledae:certus_quartz_block_polished_bricks",
+      "connecting_block": "rechiseledae:certus_quartz_block_polished_bricks_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_polished_bricks_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_polished_bricks_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_polished_bricks_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_polished_bricks_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_polished_chiseled",
+      "slab": "rechiseledae:certus_quartz_block_polished_chiseled_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_polished_chiseled_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_polished_cut_pillar",
+      "connecting_block": "rechiseledae:certus_quartz_block_polished_cut_pillar_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_polished_cut_pillar_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_polished_cut_pillar_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_polished_cut_pillar_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_polished_cut_pillar_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_polished_groovy_pillar",
+      "connecting_block": "rechiseledae:certus_quartz_block_polished_groovy_pillar_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_polished_groovy_pillar_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_polished_groovy_pillar_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_polished_groovy_pillar_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_polished_groovy_pillar_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_polished_pattern",
+      "connecting_block": "rechiseledae:certus_quartz_block_polished_pattern_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_polished_pattern_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_polished_pattern_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_polished_pattern_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_polished_pattern_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_polished_paving",
+      "connecting_block": "rechiseledae:certus_quartz_block_polished_paving_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_polished_paving_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_polished_paving_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_polished_paving_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_polished_paving_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_polished_pillar",
+      "connecting_block": "rechiseledae:certus_quartz_block_polished_pillar_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_polished_pillar_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_polished_pillar_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_polished_pillar_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_polished_pillar_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_polished_rotated_bricks",
+      "connecting_block": "rechiseledae:certus_quartz_block_polished_rotated_bricks_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_polished_rotated_bricks_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_polished_rotated_bricks_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_polished_rotated_bricks_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_polished_rotated_bricks_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_polished_scales",
+      "connecting_block": "rechiseledae:certus_quartz_block_polished_scales_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_polished_scales_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_polished_scales_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_polished_scales_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_polished_scales_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_polished_small_tiles",
+      "connecting_block": "rechiseledae:certus_quartz_block_polished_small_tiles_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_polished_small_tiles_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_polished_small_tiles_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_polished_small_tiles_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_polished_small_tiles_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_polished_squares",
+      "connecting_block": "rechiseledae:certus_quartz_block_polished_squares_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_polished_squares_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_polished_squares_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_polished_squares_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_polished_squares_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_polished_stripes",
+      "connecting_block": "rechiseledae:certus_quartz_block_polished_stripes_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_polished_stripes_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_polished_stripes_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_polished_stripes_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_polished_stripes_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_polished_tiles",
+      "connecting_block": "rechiseledae:certus_quartz_block_polished_tiles_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_polished_tiles_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_polished_tiles_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_polished_tiles_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_polished_tiles_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_rotated_bricks",
+      "connecting_block": "rechiseledae:certus_quartz_block_rotated_bricks_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_rotated_bricks_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_rotated_bricks_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_rotated_bricks_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_rotated_bricks_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_scales",
+      "connecting_block": "rechiseledae:certus_quartz_block_scales_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_scales_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_scales_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_scales_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_scales_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_small_tiles",
+      "connecting_block": "rechiseledae:certus_quartz_block_small_tiles_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_small_tiles_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_small_tiles_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_small_tiles_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_small_tiles_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_squares",
+      "connecting_block": "rechiseledae:certus_quartz_block_squares_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_squares_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_squares_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_squares_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_squares_stairs"
+    },
+    {
+      "block": "rechiseledae:certus_quartz_block_stripes",
+      "connecting_block": "rechiseledae:certus_quartz_block_stripes_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_stripes_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_stripes_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_stripes_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_stripes_stairs"
+    },
     {
       "block": "rechiseledae:certus_quartz_block_tiles",
-      "connecting_block": "rechiseledae:certus_quartz_block_tiles_connecting"
+      "connecting_block": "rechiseledae:certus_quartz_block_tiles_connecting",
+      "connecting_slab": "rechiseledae:certus_quartz_block_tiles_slab_connecting",
+      "connecting_slab_worth": 0.5,
+      "connecting_stairs": "rechiseledae:certus_quartz_block_tiles_stairs_connecting",
+      "slab": "rechiseledae:certus_quartz_block_tiles_slab",
+      "slab_worth": 0.5,
+      "stairs": "rechiseledae:certus_quartz_block_tiles_stairs"
     }
   ],
   "overwrite": false

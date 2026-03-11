@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "rechiseledae:block/fluix_block_charged",
+    "side": "rechiseledae:block/fluix_block_charged",
+    "top": "rechiseledae:block/fluix_block_charged"
+  }
+}

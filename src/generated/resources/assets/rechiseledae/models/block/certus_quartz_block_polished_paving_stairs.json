@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "rechiseledae:block/certus_quartz_block_polished_paving",
+    "side": "rechiseledae:block/certus_quartz_block_polished_paving",
+    "top": "rechiseledae:block/certus_quartz_block_polished_paving"
+  }
+}

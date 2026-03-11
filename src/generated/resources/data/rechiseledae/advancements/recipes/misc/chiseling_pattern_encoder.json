@@ -1,0 +1,49 @@
+{
+  "parent": "minecraft:recipes/root",
+  "display": {
+    "icon": {
+      "item": "rechiseledae:chiseling_pattern_encoder"
+    },
+    "title": {
+      "translate": "rechiseledae.advancement.recipes/misc/chiseling_pattern_encoder.title"
+    },
+    "description": {
+      "translate": "rechiseledae.advancement.recipes/misc/chiseling_pattern_encoder.description"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "rechiseledae:chiseling_pattern_encoder"
+      }
+    },
+    "recipe_condition": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rechiseled:chisel"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "recipe_condition"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rechiseledae:chiseling_pattern_encoder"
+    ]
+  }
+}

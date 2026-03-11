@@ -1,0 +1,163 @@
+{
+  "type": "fusion:connecting",
+  "parent": "minecraft:block/cube",
+  "connections": {
+    "down": {
+      "type": "fusion:or",
+      "predicates": [
+        {
+          "type": "fusion:or",
+          "predicates": [
+            {
+              "type": "fusion:match_block",
+              "block": "rechiseledae:sky_stone_block_brick_pattern_connecting"
+            },
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:sky_stone_block_brick_pattern_slab_connecting",
+              "properties": {
+                "type": [
+                  "double"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "fusion:match_block",
+          "block": "rechiseledae:sky_stone_block_brick_pattern_stairs_connecting"
+        },
+        {
+          "type": "fusion:match_state",
+          "block": "rechiseledae:sky_stone_block_brick_pattern_slab_connecting",
+          "properties": {
+            "type": [
+              "bottom"
+            ]
+          }
+        }
+      ]
+    },
+    "east": "#side",
+    "north": "#side",
+    "side": {
+      "type": "fusion:or",
+      "predicates": [
+        {
+          "type": "fusion:or",
+          "predicates": [
+            {
+              "type": "fusion:match_block",
+              "block": "rechiseledae:sky_stone_block_brick_pattern_connecting"
+            },
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:sky_stone_block_brick_pattern_slab_connecting",
+              "properties": {
+                "type": [
+                  "double"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "fusion:match_block",
+          "block": "rechiseledae:sky_stone_block_brick_pattern_stairs_connecting"
+        },
+        {
+          "type": "fusion:and",
+          "predicates": [
+            {
+              "type": "fusion:is_direction",
+              "directions": [
+                "top",
+                "top_left",
+                "top_right"
+              ]
+            },
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:sky_stone_block_brick_pattern_slab_connecting",
+              "properties": {
+                "type": [
+                  "bottom"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "fusion:and",
+          "predicates": [
+            {
+              "type": "fusion:is_direction",
+              "directions": [
+                "bottom",
+                "bottom_left",
+                "bottom_right"
+              ]
+            },
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:sky_stone_block_brick_pattern_slab_connecting",
+              "properties": {
+                "type": [
+                  "top"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "south": "#side",
+    "up": {
+      "type": "fusion:or",
+      "predicates": [
+        {
+          "type": "fusion:or",
+          "predicates": [
+            {
+              "type": "fusion:match_block",
+              "block": "rechiseledae:sky_stone_block_brick_pattern_connecting"
+            },
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:sky_stone_block_brick_pattern_slab_connecting",
+              "properties": {
+                "type": [
+                  "double"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "fusion:match_block",
+          "block": "rechiseledae:sky_stone_block_brick_pattern_stairs_connecting"
+        },
+        {
+          "type": "fusion:match_state",
+          "block": "rechiseledae:sky_stone_block_brick_pattern_slab_connecting",
+          "properties": {
+            "type": [
+              "top"
+            ]
+          }
+        }
+      ]
+    },
+    "west": "#side"
+  },
+  "loader": "fusion:model",
+  "textures": {
+    "down": "rechiseledae:block/sky_stone_block_brick_pattern",
+    "east": "rechiseledae:block/sky_stone_block_brick_pattern",
+    "north": "rechiseledae:block/sky_stone_block_brick_pattern",
+    "particle": "rechiseledae:block/sky_stone_block_brick_pattern",
+    "south": "rechiseledae:block/sky_stone_block_brick_pattern",
+    "up": "rechiseledae:block/sky_stone_block_brick_pattern",
+    "west": "rechiseledae:block/sky_stone_block_brick_pattern"
+  }
+}

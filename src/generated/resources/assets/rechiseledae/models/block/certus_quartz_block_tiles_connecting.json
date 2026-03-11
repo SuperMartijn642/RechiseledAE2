@@ -6,16 +6,35 @@
       "type": "fusion:or",
       "predicates": [
         {
+          "type": "fusion:or",
+          "predicates": [
+            {
+              "type": "fusion:match_block",
+              "block": "rechiseledae:certus_quartz_block_tiles_connecting"
+            },
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_tiles_slab_connecting",
+              "properties": {
+                "type": [
+                  "double"
+                ]
+              }
+            }
+          ]
+        },
+        {
           "type": "fusion:match_block",
-          "block": "rechiseledae:certus_quartz_block_tiles_connecting"
+          "block": "rechiseledae:certus_quartz_block_tiles_stairs_connecting"
         },
         {
-          "type": "fusion:or",
-          "predicates": []
-        },
-        {
-          "type": "fusion:or",
-          "predicates": []
+          "type": "fusion:match_state",
+          "block": "rechiseledae:certus_quartz_block_tiles_slab_connecting",
+          "properties": {
+            "type": [
+              "bottom"
+            ]
+          }
         }
       ]
     },
@@ -25,12 +44,26 @@
       "type": "fusion:or",
       "predicates": [
         {
-          "type": "fusion:match_block",
-          "block": "rechiseledae:certus_quartz_block_tiles_connecting"
+          "type": "fusion:or",
+          "predicates": [
+            {
+              "type": "fusion:match_block",
+              "block": "rechiseledae:certus_quartz_block_tiles_connecting"
+            },
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_tiles_slab_connecting",
+              "properties": {
+                "type": [
+                  "double"
+                ]
+              }
+            }
+          ]
         },
         {
-          "type": "fusion:or",
-          "predicates": []
+          "type": "fusion:match_block",
+          "block": "rechiseledae:certus_quartz_block_tiles_stairs_connecting"
         },
         {
           "type": "fusion:and",
@@ -44,8 +77,13 @@
               ]
             },
             {
-              "type": "fusion:or",
-              "predicates": []
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_tiles_slab_connecting",
+              "properties": {
+                "type": [
+                  "bottom"
+                ]
+              }
             }
           ]
         },
@@ -61,8 +99,13 @@
               ]
             },
             {
-              "type": "fusion:or",
-              "predicates": []
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_tiles_slab_connecting",
+              "properties": {
+                "type": [
+                  "top"
+                ]
+              }
             }
           ]
         }
@@ -73,16 +116,35 @@
       "type": "fusion:or",
       "predicates": [
         {
+          "type": "fusion:or",
+          "predicates": [
+            {
+              "type": "fusion:match_block",
+              "block": "rechiseledae:certus_quartz_block_tiles_connecting"
+            },
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_tiles_slab_connecting",
+              "properties": {
+                "type": [
+                  "double"
+                ]
+              }
+            }
+          ]
+        },
+        {
           "type": "fusion:match_block",
-          "block": "rechiseledae:certus_quartz_block_tiles_connecting"
+          "block": "rechiseledae:certus_quartz_block_tiles_stairs_connecting"
         },
         {
-          "type": "fusion:or",
-          "predicates": []
-        },
-        {
-          "type": "fusion:or",
-          "predicates": []
+          "type": "fusion:match_state",
+          "block": "rechiseledae:certus_quartz_block_tiles_slab_connecting",
+          "properties": {
+            "type": [
+              "top"
+            ]
+          }
         }
       ]
     },

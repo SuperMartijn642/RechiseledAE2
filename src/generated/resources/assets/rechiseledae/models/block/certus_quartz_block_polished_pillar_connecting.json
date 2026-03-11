@@ -1,0 +1,178 @@
+{
+  "type": "fusion:connecting",
+  "parent": "minecraft:block/cube",
+  "connections": {
+    "down": {
+      "type": "fusion:or",
+      "predicates": [
+        {
+          "type": "fusion:or",
+          "predicates": [
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_polished_pillar_connecting",
+              "properties": {
+                "axis": [
+                  "y"
+                ]
+              }
+            },
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_polished_pillar_slab_connecting",
+              "properties": {
+                "type": [
+                  "double"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "fusion:match_block",
+          "block": "rechiseledae:certus_quartz_block_polished_pillar_stairs_connecting"
+        },
+        {
+          "type": "fusion:match_state",
+          "block": "rechiseledae:certus_quartz_block_polished_pillar_slab_connecting",
+          "properties": {
+            "type": [
+              "bottom"
+            ]
+          }
+        }
+      ]
+    },
+    "east": "#side",
+    "north": "#side",
+    "side": {
+      "type": "fusion:or",
+      "predicates": [
+        {
+          "type": "fusion:or",
+          "predicates": [
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_polished_pillar_connecting",
+              "properties": {
+                "axis": [
+                  "y"
+                ]
+              }
+            },
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_polished_pillar_slab_connecting",
+              "properties": {
+                "type": [
+                  "double"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "fusion:match_block",
+          "block": "rechiseledae:certus_quartz_block_polished_pillar_stairs_connecting"
+        },
+        {
+          "type": "fusion:and",
+          "predicates": [
+            {
+              "type": "fusion:is_direction",
+              "directions": [
+                "top",
+                "top_left",
+                "top_right"
+              ]
+            },
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_polished_pillar_slab_connecting",
+              "properties": {
+                "type": [
+                  "bottom"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "fusion:and",
+          "predicates": [
+            {
+              "type": "fusion:is_direction",
+              "directions": [
+                "bottom",
+                "bottom_left",
+                "bottom_right"
+              ]
+            },
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_polished_pillar_slab_connecting",
+              "properties": {
+                "type": [
+                  "top"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "south": "#side",
+    "up": {
+      "type": "fusion:or",
+      "predicates": [
+        {
+          "type": "fusion:or",
+          "predicates": [
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_polished_pillar_connecting",
+              "properties": {
+                "axis": [
+                  "y"
+                ]
+              }
+            },
+            {
+              "type": "fusion:match_state",
+              "block": "rechiseledae:certus_quartz_block_polished_pillar_slab_connecting",
+              "properties": {
+                "type": [
+                  "double"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "fusion:match_block",
+          "block": "rechiseledae:certus_quartz_block_polished_pillar_stairs_connecting"
+        },
+        {
+          "type": "fusion:match_state",
+          "block": "rechiseledae:certus_quartz_block_polished_pillar_slab_connecting",
+          "properties": {
+            "type": [
+              "top"
+            ]
+          }
+        }
+      ]
+    },
+    "west": "#side"
+  },
+  "loader": "fusion:model",
+  "textures": {
+    "down": "rechiseledae:block/certus_quartz_block_polished_pillar_end",
+    "east": "rechiseledae:block/certus_quartz_block_polished_pillar_side",
+    "north": "rechiseledae:block/certus_quartz_block_polished_pillar_side",
+    "particle": "rechiseledae:block/certus_quartz_block_polished_pillar_side",
+    "south": "rechiseledae:block/certus_quartz_block_polished_pillar_side",
+    "up": "rechiseledae:block/certus_quartz_block_polished_pillar_end",
+    "west": "rechiseledae:block/certus_quartz_block_polished_pillar_side"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "rechiseledae:block/fluix_block_swirling",
+    "side": "rechiseledae:block/fluix_block_swirling",
+    "top": "rechiseledae:block/fluix_block_swirling"
+  }
+}
