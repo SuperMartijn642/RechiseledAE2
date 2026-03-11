@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "rechiseledae:block/sky_stone_block_polished_bordered",
+    "down": "rechiseledae:block/sky_stone_block_polished_bordered",
+    "north": "rechiseledae:block/sky_stone_block_polished_bordered",
+    "east": "rechiseledae:block/sky_stone_block_polished_bordered",
+    "south": "rechiseledae:block/sky_stone_block_polished_bordered",
+    "west": "rechiseledae:block/sky_stone_block_polished_bordered",
+    "particle": "rechiseledae:block/sky_stone_block_polished_bordered"
+  }
+}

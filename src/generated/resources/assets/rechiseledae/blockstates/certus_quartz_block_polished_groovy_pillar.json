@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "rechiseledae:block/certus_quartz_block_polished_groovy_pillar",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "rechiseledae:block/certus_quartz_block_polished_groovy_pillar"
+    },
+    "axis=z": {
+      "model": "rechiseledae:block/certus_quartz_block_polished_groovy_pillar",
+      "x": 90
+    }
+  }
+}

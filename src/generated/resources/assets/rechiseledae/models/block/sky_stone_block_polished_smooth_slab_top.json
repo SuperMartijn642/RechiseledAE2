@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "rechiseledae:block/sky_stone_block_polished_smooth",
+    "side": "rechiseledae:block/sky_stone_block_polished_smooth",
+    "top": "rechiseledae:block/sky_stone_block_polished_smooth"
+  }
+}

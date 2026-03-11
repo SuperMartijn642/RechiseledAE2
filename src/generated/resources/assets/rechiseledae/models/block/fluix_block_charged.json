@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "rechiseledae:block/fluix_block_charged",
+    "down": "rechiseledae:block/fluix_block_charged",
+    "north": "rechiseledae:block/fluix_block_charged",
+    "east": "rechiseledae:block/fluix_block_charged",
+    "south": "rechiseledae:block/fluix_block_charged",
+    "west": "rechiseledae:block/fluix_block_charged",
+    "particle": "rechiseledae:block/fluix_block_charged"
+  }
+}

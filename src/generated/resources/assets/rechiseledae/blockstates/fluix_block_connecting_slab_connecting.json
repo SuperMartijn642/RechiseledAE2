@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "rechiseledae:block/fluix_block_connecting_slab_connecting_bottom"
+    },
+    "type=double": {
+      "model": "rechiseledae:block/fluix_block_connecting_slab_connecting_double"
+    },
+    "type=top": {
+      "model": "rechiseledae:block/fluix_block_connecting_slab_connecting_top"
+    }
+  }
+}

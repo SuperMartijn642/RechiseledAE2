@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "rechiseledae:block/fluix_block_charged_crushed_slab_bottom"
+    },
+    "type=double": {
+      "model": "rechiseledae:block/fluix_block_charged_crushed_slab_double"
+    },
+    "type=top": {
+      "model": "rechiseledae:block/fluix_block_charged_crushed_slab_top"
+    }
+  }
+}

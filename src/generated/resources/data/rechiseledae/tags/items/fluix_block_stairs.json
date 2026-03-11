@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "rechiseledae:fluix_block_bordered_stairs",
+    "rechiseledae:fluix_block_bordered_stairs_connecting",
+    "rechiseledae:fluix_block_bricks_stairs",
+    "rechiseledae:fluix_block_bricks_stairs_connecting",
+    "rechiseledae:fluix_block_charged_bricks_stairs",
+    "rechiseledae:fluix_block_charged_bricks_stairs_connecting",
+    "rechiseledae:fluix_block_charged_checkerboard_stairs",
+    "rechiseledae:fluix_block_charged_crushed_stairs",
+    "rechiseledae:fluix_block_charged_crushed_stairs_connecting",
+    "rechiseledae:fluix_block_charged_enchanted_stairs",
+    "rechiseledae:fluix_block_charged_enchanted_stairs_connecting",
+    "rechiseledae:fluix_block_charged_smooth_stairs",
+    "rechiseledae:fluix_block_charged_stairs",
+    "rechiseledae:fluix_block_charged_stairs_connecting",
+    "rechiseledae:fluix_block_charged_swirling_stairs",
+    "rechiseledae:fluix_block_checkerboard_stairs",
+    "rechiseledae:fluix_block_connecting_stairs_connecting",
+    "rechiseledae:fluix_block_crushed_stairs",
+    "rechiseledae:fluix_block_decorated_stairs",
+    "rechiseledae:fluix_block_diagonal_tiles_stairs",
+    "rechiseledae:fluix_block_enchanted_stairs",
+    "rechiseledae:fluix_block_enchanted_stairs_connecting",
+    "rechiseledae:fluix_block_smooth_stairs",
+    "rechiseledae:fluix_block_squares_stairs",
+    "rechiseledae:fluix_block_swirling_stairs",
+    "rechiseledae:fluix_block_tiles_stairs",
+    "rechiseledae:fluix_block_tiles_stairs_connecting",
+    "rechiseledae:fluix_block_woven_stairs"
+  ]
+}

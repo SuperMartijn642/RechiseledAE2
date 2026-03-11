@@ -14,35 +14,23 @@
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/certus_quartz_block_shiny"
-    },
-    {
-      "type": "minecraft:single",
-      "resource": "rechiseledae:block/fluix_block_smooth"
-    },
-    {
-      "type": "minecraft:single",
-      "resource": "rechiseledae:block/certus_quartz_block_cut_small_tiles"
-    },
-    {
-      "type": "minecraft:single",
       "resource": "rechiseledae:block/certus_quartz_block_diagonal_tiles"
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/certus_quartz_block_cut_scales"
+      "resource": "rechiseledae:block/sky_stone_block_brick_pattern"
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/fluix_block_enchanted"
+      "resource": "rechiseledae:block/sky_stone_block_polished_bordered_squares"
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/fluix_block_woven"
+      "resource": "rechiseledae:block/certus_quartz_block_polished_brick_bordered"
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/fluix_block_swirling"
+      "resource": "rechiseledae:block/certus_quartz_block_polished_squares"
     },
     {
       "type": "minecraft:single",
@@ -50,27 +38,151 @@
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/certus_quartz_block_cut_stripes"
+      "resource": "rechiseledae:block/certus_quartz_block_pattern"
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/certus_quartz_block_pillar_end"
+      "resource": "rechiseledae:block/fluix_block_charged"
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/certus_quartz_block_cut_rotated_bricks"
+      "resource": "rechiseledae:block/certus_quartz_block_chiseled"
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/certus_quartz_block_cut_chiseled"
+      "resource": "rechiseledae:block/certus_quartz_block_diagonal_tiles_pillar_side"
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/certus_quartz_block_cut_paving"
+      "resource": "rechiseledae:block/sky_stone_block_polished_tiles"
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/certus_quartz_block_cut_bricks"
+      "resource": "rechiseledae:block/sky_stone_block_polished_bordered"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_crystallized_bordered"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_diagonal_tiles_pillar_end"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_squares"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/sky_stone_block_polished_small_bricks"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_polished_pattern"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/sky_stone_block_tiles"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_rotated_bricks"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/fluix_block_charged_enchanted"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/sky_stone_block_polished_bricks"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_polished_paving"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/sky_stone_block_polished_squares"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_polished_scales"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/sky_stone_block_polished_smooth"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_polished_rotated_bricks"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_crystallized"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/fluix_block_smooth"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_brick_bordered"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_polished_bricks"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/sky_stone_block_polished_diagonal_bricks"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/fluix_block_enchanted"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/fluix_block_charged_smooth"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/fluix_block_swirling"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_polished_tiles"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/fluix_block_woven"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/fluix_block_charged_crushed"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_polished_pillar_end"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_polished_chiseled"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_polished_groovy_pillar_side"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_paving"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_scales"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/sky_stone_block_polished_brick_paving"
     },
     {
       "type": "minecraft:single",
@@ -82,7 +194,11 @@
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/certus_quartz_block_cut_pattern"
+      "resource": "rechiseledae:block/sky_stone_block_polished"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/sky_stone_block_polished_rotated_bricks"
     },
     {
       "type": "minecraft:single",
@@ -90,11 +206,19 @@
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/certus_quartz_block_pillar_side"
+      "resource": "rechiseledae:block/certus_quartz_block_polished_groovy_pillar_end"
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/certus_quartz_block_cut_squares"
+      "resource": "rechiseledae:block/fluix_block_charged_swirling"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_small_tiles"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_crystallized_polished"
     },
     {
       "type": "minecraft:single",
@@ -102,11 +226,39 @@
     },
     {
       "type": "minecraft:single",
+      "resource": "rechiseledae:block/fluix_block_charged_bricks"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_polished_cut_pillar_side"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_polished_pillar_side"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_polished_small_tiles"
+    },
+    {
+      "type": "minecraft:single",
       "resource": "rechiseledae:block/fluix_block_bricks"
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/certus_quartz_block_cut_bordered"
+      "resource": "rechiseledae:block/certus_quartz_block_polished_cut_pillar_end"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/fluix_block_charged_checkerboard"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/sky_stone_block_polished_bordered_diagonal_bricks"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/sky_stone_block_brick_bordered"
     },
     {
       "type": "minecraft:single",
@@ -114,7 +266,19 @@
     },
     {
       "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_polished_stripes"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/sky_stone_bricks"
+    },
+    {
+      "type": "minecraft:single",
       "resource": "rechiseledae:block/certus_quartz_block_tiles"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:block/certus_quartz_block_stripes"
     },
     {
       "type": "minecraft:single",
@@ -122,15 +286,11 @@
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/certus_quartz_block_cut_tiles"
-    },
-    {
-      "type": "minecraft:single",
       "resource": "rechiseledae:block/fluix_block_diagonal_tiles"
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/certus_quartz_block_smooth"
+      "resource": "rechiseledae:block/sky_stone_block_polished_brick_pattern"
     }
   ]
 }

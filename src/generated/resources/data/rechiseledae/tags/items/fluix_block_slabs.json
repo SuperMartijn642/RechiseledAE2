@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "rechiseledae:fluix_block_bordered_slab",
+    "rechiseledae:fluix_block_bordered_slab_connecting",
+    "rechiseledae:fluix_block_bricks_slab",
+    "rechiseledae:fluix_block_bricks_slab_connecting",
+    "rechiseledae:fluix_block_charged_bricks_slab",
+    "rechiseledae:fluix_block_charged_bricks_slab_connecting",
+    "rechiseledae:fluix_block_charged_checkerboard_slab",
+    "rechiseledae:fluix_block_charged_crushed_slab",
+    "rechiseledae:fluix_block_charged_crushed_slab_connecting",
+    "rechiseledae:fluix_block_charged_enchanted_slab",
+    "rechiseledae:fluix_block_charged_enchanted_slab_connecting",
+    "rechiseledae:fluix_block_charged_slab",
+    "rechiseledae:fluix_block_charged_slab_connecting",
+    "rechiseledae:fluix_block_charged_smooth_slab",
+    "rechiseledae:fluix_block_charged_swirling_slab",
+    "rechiseledae:fluix_block_checkerboard_slab",
+    "rechiseledae:fluix_block_connecting_slab_connecting",
+    "rechiseledae:fluix_block_crushed_slab",
+    "rechiseledae:fluix_block_decorated_slab",
+    "rechiseledae:fluix_block_diagonal_tiles_slab",
+    "rechiseledae:fluix_block_enchanted_slab",
+    "rechiseledae:fluix_block_enchanted_slab_connecting",
+    "rechiseledae:fluix_block_smooth_slab",
+    "rechiseledae:fluix_block_squares_slab",
+    "rechiseledae:fluix_block_swirling_slab",
+    "rechiseledae:fluix_block_tiles_slab",
+    "rechiseledae:fluix_block_tiles_slab_connecting",
+    "rechiseledae:fluix_block_woven_slab"
+  ]
+}
