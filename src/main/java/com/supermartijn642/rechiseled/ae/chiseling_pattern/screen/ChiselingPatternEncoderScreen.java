@@ -13,6 +13,9 @@ import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.packet.PacketS
 import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.widgets.*;
 import com.supermartijn642.rechiseled.api.chiseling.*;
 import com.supermartijn642.rechiseled.screen.preview.PreviewMode;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.ModContainer;
+import net.fabricmc.loader.api.metadata.ModMetadata;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -20,9 +23,6 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.fml.ModContainer;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.forgespi.language.IModInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -259,7 +259,7 @@ public class ChiselingPatternEncoderScreen extends BaseContainerWidget<Chiseling
             ResourceLocation identifier = BuiltInRegistries.ITEM.getKey(item);
             if(identifier.getNamespace().toLowerCase().startsWith(formattedSearchText.substring(1)))
                 return true;
-            String modName = ModList.get().getModContainerById(identifier.getNamespace()).map(ModContainer::getModInfo).map(IModInfo::getDisplayName).orElse(null);
+            String modName = FabricLoader.getInstance().getModContainer(identifier.getNamespace()).map(ModContainer::getMetadata).map(ModMetadata::getName).orElse(null);
             return modName != null && modName.toLowerCase().startsWith(formattedSearchText);
         }
 

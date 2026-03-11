@@ -1,7 +1,6 @@
 package com.supermartijn642.rechiseled.ae;
 
 import appeng.core.definitions.AEBlocks;
-import com.supermartijn642.core.CommonUtils;
 import com.supermartijn642.core.TextComponents;
 import com.supermartijn642.core.block.BaseBlock;
 import com.supermartijn642.core.block.BaseBlockEntityType;
@@ -20,13 +19,13 @@ import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.ChiselingPatte
 import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.packet.PacketEncodePattern;
 import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.packet.PacketSelectEntry;
 import com.supermartijn642.rechiseled.api.registration.RechiseledRegistration;
+import net.fabricmc.api.ModInitializer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
@@ -34,8 +33,7 @@ import java.util.function.Consumer;
 /**
  * Created 25/04/2023 by SuperMartijn642
  */
-@Mod(RechiseledAE.MODID)
-public class RechiseledAE {
+public class RechiseledAE implements ModInitializer {
 
     public static final String MODID = "rechiseledae";
 
@@ -55,7 +53,8 @@ public class RechiseledAE {
     @RegistryEntryAcceptor(namespace = MODID, identifier = "chiseling_pattern_encoder_entity", registry = RegistryEntryAcceptor.Registry.BLOCK_ENTITY_TYPES)
     public static BaseBlockEntityType<ChiselingPatternEncoderBlockEntity> chiseling_pattern_encoder_entity;
 
-    public RechiseledAE(){
+    @Override
+    public void onInitialize(){
         CHANNEL.registerMessage(PacketSelectEntry.class, PacketSelectEntry::new, PacketDirection.CLIENT_TO_SERVER, true);
         CHANNEL.registerMessage(PacketEncodePattern.class, PacketEncodePattern::new, PacketDirection.CLIENT_TO_SERVER, true);
 
@@ -81,8 +80,5 @@ public class RechiseledAE {
 
         // Register data providers for generating all the json files
         REGISTRATION.registerDataProviders();
-
-        if(CommonUtils.getEnvironmentSide().isClient())
-            RechiseledAEClient.initialize();
     }
 }

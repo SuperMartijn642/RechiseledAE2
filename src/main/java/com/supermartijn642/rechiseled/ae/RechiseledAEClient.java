@@ -9,6 +9,7 @@ import com.supermartijn642.rechiseled.ae.chiseling_pattern.ChiselingPatternEncod
 import com.supermartijn642.rechiseled.ae.chiseling_pattern.ChiselingPatternEncoderRenderer;
 import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.ChiselingPatternEncoderContainer;
 import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.ChiselingPatternEncoderScreen;
+import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
@@ -16,9 +17,10 @@ import net.minecraft.world.item.ItemStack;
 /**
  * Created 16/02/2026 by SuperMartijn642
  */
-public class RechiseledAEClient {
+public class RechiseledAEClient implements ClientModInitializer {
 
-    public static void initialize(){
+    @Override
+    public void onInitializeClient(){
         ClientRegistrationHandler handler = ClientRegistrationHandler.get(RechiseledAE.MODID);
         handler.registerCustomBlockEntityRenderer(() -> RechiseledAE.chiseling_pattern_encoder_entity, ChiselingPatternEncoderRenderer::new);
         handler.registerContainerScreen(ChiselingPatternEncoderContainer.TYPE, container -> new WidgetContainerScreen<>(new ChiselingPatternEncoderScreen(), container, false) {

@@ -7,7 +7,7 @@ import com.supermartijn642.core.generator.RecipeGenerator;
 import com.supermartijn642.core.registry.GeneratorRegistrationHandler;
 import com.supermartijn642.rechiseled.Rechiseled;
 import com.supermartijn642.rechiseled.ae.RechiseledAE;
-import net.minecraftforge.common.Tags;
+import net.fabricmc.fabric.api.tag.convention.v1.ConventionalItemTags;
 
 /**
  * Created 14/02/2026 by SuperMartijn642
@@ -66,10 +66,10 @@ public class ChiselingPatternDataGenerators {
                 this.shaped(RechiseledAE.chiseling_pattern_encoder)
                     .pattern("ABA")
                     .pattern("CDC")
-                    .input('A', Tags.Items.GLASS_COLORLESS)
+                    .input('A', ConventionalItemTags.GLASS_BLOCKS)
                     .input('B', Rechiseled.chisel)
-                    .input('C', Tags.Items.INGOTS_IRON)
-                    .input('D', Tags.Items.INGOTS_COPPER)
+                    .input('C', ConventionalItemTags.IRON_INGOTS)
+                    .input('D', ConventionalItemTags.COPPER_INGOTS)
                     .unlockedBy(Rechiseled.chisel);
             }
         });
