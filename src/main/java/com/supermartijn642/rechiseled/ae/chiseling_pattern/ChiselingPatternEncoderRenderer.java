@@ -37,7 +37,7 @@ public class ChiselingPatternEncoderRenderer implements CustomBlockEntityRendere
         Item item = entity.getInput();
         if(item != null){
             poseStack.pushPose();
-            poseStack.translate(-0.1, 0.1, -0.1);
+            poseStack.translate(-0.1, 0.125, -0.1);
             poseStack.scale(0.5f, 0.5f, 0.5f);
             poseStack.mulPose(new Quaternionf().rotateY(0.6f));
             ClientUtils.getItemRenderer().renderStatic(item.getDefaultInstance(), ItemDisplayContext.FIXED, combinedLight, combinedOverlay, poseStack, bufferSource, entity.getLevel(), 0);
