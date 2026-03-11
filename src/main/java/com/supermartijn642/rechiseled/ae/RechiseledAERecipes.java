@@ -35,6 +35,9 @@ public class RechiseledAERecipes {
         regularSet(CERTUS_QUARTZ_BLOCK, "ae2:quartz_block", "ae2:quartz_stairs", "ae2:quartz_slab");
         regularSet(CERTUS_QUARTZ_BLOCK, "ae2:smooth_quartz_block", "ae2:smooth_quartz_stairs", "ae2:smooth_quartz_slab");
         regularSet(CERTUS_QUARTZ_BLOCK, "ae2:chiseled_quartz_block", "ae2:chiseled_quartz_stairs", "ae2:chiseled_quartz_slab");
+        // Sky stone block
+        regularSet(SKY_STONE_BLOCK, "ae2:sky_stone_block", "ae2:sky_stone_stairs", "ae2:sky_stone_slab");
+        regularSet(SKY_STONE_BLOCK, "ae2:sky_stone_small_brick", "ae2:sky_stone_small_brick_stairs", "ae2:sky_stone_small_brick_slab");
     }
 
     private static void regularSet(ResourceLocation recipe, String blockIdentifier, String stairsIdentifier, String slabIdentifier){
