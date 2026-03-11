@@ -20,9 +20,9 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.ModList;
-import net.neoforged.neoforgespi.language.IModInfo;
+import net.minecraftforge.fml.ModContainer;
+import net.minecraftforge.fml.ModList;
+import net.minecraftforge.forgespi.language.IModInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -163,7 +163,7 @@ public class ChiselingPatternEncoderScreen extends BaseContainerWidget<Chiseling
         for(int index = 4; index < this.container.slots.size(); index++){
             Slot slot = this.container.getSlot(index);
             ItemStack stack = slot.getItem();
-            if(stack.isEmpty() || !stack.getComponentsPatch().isEmpty())
+            if(stack.isEmpty() || !stack.hasTag())
                 continue;
 
             // Check if the stack is in the current recipe

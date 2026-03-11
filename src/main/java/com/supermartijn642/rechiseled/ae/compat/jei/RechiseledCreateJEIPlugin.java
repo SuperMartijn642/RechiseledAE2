@@ -15,7 +15,7 @@ public class RechiseledCreateJEIPlugin implements IModPlugin {
 
     @Override
     public ResourceLocation getPluginUid(){
-        return ResourceLocation.fromNamespaceAndPath(RechiseledAE.MODID, "chiseling_plugin");
+        return RechiseledAE.identifier("chiseling_plugin");
     }
 
     @Override

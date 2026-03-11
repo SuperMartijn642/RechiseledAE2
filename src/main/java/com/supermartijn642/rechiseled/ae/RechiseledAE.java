@@ -1,8 +1,6 @@
 package com.supermartijn642.rechiseled.ae;
 
-import appeng.api.crafting.PatternDetailsHelper;
 import appeng.core.definitions.AEBlocks;
-import appeng.core.definitions.AEItems;
 import com.supermartijn642.core.CommonUtils;
 import com.supermartijn642.core.TextComponents;
 import com.supermartijn642.core.block.BaseBlock;
@@ -14,7 +12,10 @@ import com.supermartijn642.core.network.PacketChannel;
 import com.supermartijn642.core.network.PacketDirection;
 import com.supermartijn642.core.registry.RegistrationHandler;
 import com.supermartijn642.core.registry.RegistryEntryAcceptor;
-import com.supermartijn642.rechiseled.ae.chiseling_pattern.*;
+import com.supermartijn642.rechiseled.ae.chiseling_pattern.ChiselingPatternDataGenerators;
+import com.supermartijn642.rechiseled.ae.chiseling_pattern.ChiselingPatternEncoderBlock;
+import com.supermartijn642.rechiseled.ae.chiseling_pattern.ChiselingPatternEncoderBlockEntity;
+import com.supermartijn642.rechiseled.ae.chiseling_pattern.ChiselingPatternItem;
 import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.ChiselingPatternEncoderContainer;
 import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.packet.PacketEncodePattern;
 import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.packet.PacketSelectEntry;
@@ -24,8 +25,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.common.Mod;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraftforge.fml.common.Mod;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
@@ -38,7 +40,7 @@ public class RechiseledAE {
     public static final String MODID = "rechiseledae";
 
     public static ResourceLocation identifier(String path){
-        return ResourceLocation.fromNamespaceAndPath(MODID, path);
+        return new ResourceLocation(MODID, path);
     }
 
     public static final RechiseledRegistration REGISTRATION = RechiseledRegistration.get(MODID);
@@ -53,7 +55,7 @@ public class RechiseledAE {
     @RegistryEntryAcceptor(namespace = MODID, identifier = "chiseling_pattern_encoder_entity", registry = RegistryEntryAcceptor.Registry.BLOCK_ENTITY_TYPES)
     public static BaseBlockEntityType<ChiselingPatternEncoderBlockEntity> chiseling_pattern_encoder_entity;
 
-    public RechiseledAE(IEventBus eventBus){
+    public RechiseledAE(){
         CHANNEL.registerMessage(PacketSelectEntry.class, PacketSelectEntry::new, PacketDirection.CLIENT_TO_SERVER, true);
         CHANNEL.registerMessage(PacketEncodePattern.class, PacketEncodePattern::new, PacketDirection.CLIENT_TO_SERVER, true);
 
@@ -63,15 +65,14 @@ public class RechiseledAE {
 
         // Register everything for chiseling patterns
         RegistrationHandler handler = RegistrationHandler.get(MODID);
-        handler.registerItem("chiseling_pattern", () -> PatternDetailsHelper.encodedPatternItemBuilder(ChiselingPattern::new).invalidPatternTooltip(ChiselingPattern::getInvalidTooltip).build());
-        handler.registerDataComponentType("encoded_chiseling_pattern", EncodedChiselingPattern.COMPONENT_TYPE);
+        handler.registerItem("chiseling_pattern", () -> new ChiselingPatternItem(new Item.Properties().stacksTo(1)));
         handler.registerBlock("chiseling_pattern_encoder", ChiselingPatternEncoderBlock::new);
-        handler.registerItem("chiseling_pattern_encoder", () -> new BaseBlockItem(chiseling_pattern_encoder, ItemProperties.create().group(GROUP)){
+        handler.registerItem("chiseling_pattern_encoder", () -> new BaseBlockItem(chiseling_pattern_encoder, ItemProperties.create().group(GROUP)) {
             @Override
-            protected void appendItemInformation(ItemStack stack, Consumer<Component> info, boolean advanced){
+            protected void appendItemInformation(ItemStack stack, @Nullable BlockGetter level, Consumer<Component> info, boolean advanced){
                 Component molecularAssembler = TextComponents.block(AEBlocks.MOLECULAR_ASSEMBLER.block()).color(ChatFormatting.GOLD).get();
                 info.accept(TextComponents.translation("rechiseledae.chiseling_pattern_encoder.hint", molecularAssembler).color(ChatFormatting.GRAY).get());
-                super.appendItemInformation(stack, info, advanced);
+                super.appendItemInformation(stack, level, info, advanced);
             }
         });
         handler.registerBlockEntityType("chiseling_pattern_encoder_entity", () -> BaseBlockEntityType.create(ChiselingPatternEncoderBlockEntity::new, chiseling_pattern_encoder));

@@ -7,8 +7,7 @@ import com.supermartijn642.core.generator.RecipeGenerator;
 import com.supermartijn642.core.registry.GeneratorRegistrationHandler;
 import com.supermartijn642.rechiseled.Rechiseled;
 import com.supermartijn642.rechiseled.ae.RechiseledAE;
-import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.common.Tags;
+import net.minecraftforge.common.Tags;
 
 /**
  * Created 14/02/2026 by SuperMartijn642
@@ -67,7 +66,7 @@ public class ChiselingPatternDataGenerators {
                 this.shaped(RechiseledAE.chiseling_pattern_encoder)
                     .pattern("ABA")
                     .pattern("CDC")
-                    .input('A', Tags.Items.GLASS_BLOCKS_CHEAP)
+                    .input('A', Tags.Items.GLASS_COLORLESS)
                     .input('B', Rechiseled.chisel)
                     .input('C', Tags.Items.INGOTS_IRON)
                     .input('D', Tags.Items.INGOTS_COPPER)

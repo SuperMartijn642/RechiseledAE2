@@ -18,11 +18,11 @@ public class RechiseledAERecipes {
     public static final ResourceLocation SKY_STONE_BLOCK = location("sky_stone_block");
 
     private static ResourceLocation location(String name){
-        return ResourceLocation.fromNamespaceAndPath(RechiseledAE.MODID, name);
+        return new ResourceLocation(RechiseledAE.MODID, name);
     }
 
     private static Supplier<ItemLike> getBlock(String identifier){
-        ResourceLocation location = ResourceLocation.parse(identifier);
+        ResourceLocation location = new ResourceLocation(identifier);
         return () -> {
             if(!Registries.BLOCKS.hasIdentifier(location))
                 throw new RuntimeException("Unknown block '" + identifier + "'!");

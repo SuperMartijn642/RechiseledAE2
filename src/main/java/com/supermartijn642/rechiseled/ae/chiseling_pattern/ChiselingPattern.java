@@ -1,7 +1,6 @@
 package com.supermartijn642.rechiseled.ae.chiseling_pattern;
 
 import appeng.api.crafting.IPatternDetails;
-import appeng.api.crafting.PatternDetailsTooltip;
 import appeng.api.stacks.AEItemKey;
 import appeng.api.stacks.AEKey;
 import appeng.api.stacks.GenericStack;
@@ -13,15 +12,14 @@ import com.supermartijn642.rechiseled.api.chiseling.ChiselingRecipeManager;
 import com.supermartijn642.rechiseled.api.chiseling.ItemWithWorth;
 import com.supermartijn642.rechiseled.api.chiseling.conversion.ChiselingConversionHelper;
 import com.supermartijn642.rechiseled.api.chiseling.conversion.ConversionResult;
-import net.minecraft.network.chat.Component;
+import net.minecraft.core.NonNullList;
+import net.minecraft.world.Container;
+import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.Objects;
 
 /**
@@ -35,12 +33,12 @@ public class ChiselingPattern implements IPatternDetails, IMolecularAssemblerSup
     private final Item input, output;
     private final int inputCount, outputCount;
     private final IInput[] inputs;
-    private final List<GenericStack> outputs;
+    private final GenericStack[] outputs;
 
     public ChiselingPattern(AEItemKey definition, Level level){
         this.definition = definition;
 
-        var encodedPattern = definition.get(EncodedChiselingPattern.COMPONENT_TYPE);
+        var encodedPattern = EncodedChiselingPattern.deserialize(definition.toStack());
         if(encodedPattern == null)
             throw new IllegalArgumentException("Given item does not encode a chiseling pattern: " + definition);
         else if(encodedPattern.containsMissingContent())
@@ -97,7 +95,7 @@ public class ChiselingPattern implements IPatternDetails, IMolecularAssemblerSup
                 }
             }
         };
-        this.outputs = List.of(new GenericStack(AEItemKey.of(this.output), this.outputCount));
+        this.outputs = new GenericStack[]{new GenericStack(AEItemKey.of(this.output), this.outputCount)};
     }
 
     @Override
@@ -122,27 +120,20 @@ public class ChiselingPattern implements IPatternDetails, IMolecularAssemblerSup
     }
 
     @Override
-    public List<GenericStack> getOutputs(){
+    public GenericStack[] getOutputs(){
         return this.outputs;
     }
 
     @Override
-    public PatternDetailsTooltip getTooltip(Level level, TooltipFlag flags){
-        var tooltip = new PatternDetailsTooltip(PatternDetailsTooltip.OUTPUT_TEXT_CRAFTS);
-        tooltip.addInputsAndOutputs(this);
-        return tooltip;
-    }
-
-    public static PatternDetailsTooltip getInvalidTooltip(ItemStack stack, Level level, @Nullable Exception cause, TooltipFlag flags) {
-        return new PatternDetailsTooltip(PatternDetailsTooltip.OUTPUT_TEXT_CRAFTS);
-    }
-
-    @Override
-    public ItemStack assemble(CraftingInput input, Level level){
-        if(input.size() != 1)
+    public ItemStack assemble(Container container, Level level){
+        if(container.getContainerSize() < CRAFTING_GRID_SLOT)
             return ItemStack.EMPTY;
+        for(int i = 0; i < container.getContainerSize(); i++){
+            if(i != CRAFTING_GRID_SLOT && !container.getItem(i).isEmpty())
+                return ItemStack.EMPTY;
+        }
 
-        ItemStack item = input.getItem(0);
+        ItemStack item = container.getItem(CRAFTING_GRID_SLOT);
         if(item.isEmpty() || item.getItem() != this.input || item.getCount() < this.inputCount)
             return ItemStack.EMPTY;
 
@@ -151,7 +142,7 @@ public class ChiselingPattern implements IPatternDetails, IMolecularAssemblerSup
 
     @Override
     public boolean isItemValid(int slot, AEItemKey key, Level level){
-        return slot == CRAFTING_GRID_SLOT && key.is(this.input);
+        return slot == CRAFTING_GRID_SLOT && key.getItem() == this.input;
     }
 
     @Override
@@ -166,5 +157,14 @@ public class ChiselingPattern implements IPatternDetails, IMolecularAssemblerSup
             gridAccessor.set(CRAFTING_GRID_SLOT, itemKey.toStack(this.inputCount));
             table[0].remove(entry.getKey(), this.inputCount);
         }
+    }
+
+    @Override
+    public NonNullList<ItemStack> getRemainingItems(CraftingContainer container){
+        NonNullList<ItemStack> items = NonNullList.withSize(container.getContainerSize(), ItemStack.EMPTY);
+        if(container.getContainerSize() >= CRAFTING_GRID_SLOT &&
+            (container.getItem(CRAFTING_GRID_SLOT).isEmpty() || container.getItem(CRAFTING_GRID_SLOT).getItem() == this.input))
+            items.set(CRAFTING_GRID_SLOT, new ItemStack(this.input, this.inputCount - container.getItem(CRAFTING_GRID_SLOT).getCount()));
+        return items;
     }
 }

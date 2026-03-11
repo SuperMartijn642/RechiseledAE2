@@ -26,18 +26,14 @@ logoFile = "${mod_id}.png" #optional
 authors = "SuperMartijn642" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description = '''${mod_description}'''
-[[accessTransformers]]
-file = "META-INF/accesstransformer.cfg"
-[[mixins]]
-config = "${mod_id}.mixins.json"
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.${ mod_id }]] #optional
 # the modid of the dependency
-modId = "neoforge" #mandatory
+modId = "forge" #mandatory
 # Does this dependency have to exist - if not, ordering below must be specified
-type = "required" #mandatory
+mandatory = true #mandatory
 # The version range of the dependency
-versionRange = "${neoforge_dependency}" #mandatory
+versionRange = "${forge_dependency}" #mandatory
 # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
 ordering = "NONE"
 # Side this dependency is applied on - BOTH, CLIENT or SERVER
@@ -45,28 +41,28 @@ side = "BOTH"
 # Here's another dependency
 [[dependencies.${ mod_id }]]
 modId = "minecraft"
-type = "required"
+mandatory = true
 versionRange = "${minecraft_dependency}"
 ordering = "NONE"
 side = "BOTH"
 # Add a dependency on SuperMartijn642's Core Lib
 [[dependencies.${ mod_id }]]
 modId = "supermartijn642corelib"
-type = "required"
+mandatory = true
 versionRange = "${core_library_dependency}"
 ordering = "NONE"
 side = "BOTH"
 # Add a dependency on Rechiseled
 [[dependencies.${ mod_id }]]
 modId = "rechiseled"
-type = "required"
+mandatory = true
 versionRange = "${rechiseled_dependency}"
 ordering = "NONE"
 side = "BOTH"
 # Add a dependency on Applied Energistics 2
 [[dependencies.${ mod_id }]]
 modId = "ae2"
-type = "required"
+mandatory = true
 versionRange = "${applied_energistics_dependency}"
 ordering = "NONE"
 side = "BOTH"

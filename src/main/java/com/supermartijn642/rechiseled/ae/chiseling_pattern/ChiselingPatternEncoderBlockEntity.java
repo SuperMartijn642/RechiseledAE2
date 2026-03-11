@@ -2,7 +2,6 @@ package com.supermartijn642.rechiseled.ae.chiseling_pattern;
 
 import appeng.api.crafting.PatternDetailsHelper;
 import appeng.core.definitions.AEItems;
-import com.supermartijn642.core.CommonUtils;
 import com.supermartijn642.core.block.BaseBlockEntity;
 import com.supermartijn642.core.registry.Registries;
 import com.supermartijn642.rechiseled.ae.RechiseledAE;
@@ -154,7 +153,7 @@ public class ChiselingPatternEncoderBlockEntity extends BaseBlockEntity {
     }
 
     public void setBlankPatterns(ItemStack stack){
-        if(!stack.isEmpty() && !AEItems.BLANK_PATTERN.is(stack))
+        if(!stack.isEmpty() && !AEItems.BLANK_PATTERN.isSameAs(stack))
             throw new IllegalArgumentException("Input must be a blank pattern!");
         this.blankPatterns = stack;
         this.dataChanged();
@@ -189,7 +188,7 @@ public class ChiselingPatternEncoderBlockEntity extends BaseBlockEntity {
             this.encodedPatterns = new ItemStack(RechiseledAE.chiseling_pattern, this.encodedPatterns.getCount());
 
         // Encode pattern
-        this.encodedPatterns.set(EncodedChiselingPattern.COMPONENT_TYPE, new EncodedChiselingPattern(this.input, this.output));
+        new EncodedChiselingPattern(this.input, this.output).serialize(this.encodedPatterns);
         this.dataChanged();
     }
 
@@ -205,21 +204,21 @@ public class ChiselingPatternEncoderBlockEntity extends BaseBlockEntity {
             data.putInt("outputCount", this.outputCount);
         }
         if(!this.blankPatterns.isEmpty())
-            data.put("blankPatterns", this.blankPatterns.save(this.level.registryAccess()));
+            data.put("blankPatterns", this.blankPatterns.save(new CompoundTag()));
         if(!this.encodedPatterns.isEmpty())
-            data.put("encodedPatterns", this.encodedPatterns.save(this.level.registryAccess()));
+            data.put("encodedPatterns", this.encodedPatterns.save(new CompoundTag()));
         return data;
     }
 
     @Override
     protected void readData(CompoundTag data){
-        this.input = data.contains("input") ? Registries.ITEMS.getValue(ResourceLocation.parse(data.getString("input"))) : null;
+        this.input = data.contains("input") ? Registries.ITEMS.getValue(new ResourceLocation(data.getString("input"))) : null;
         this.inputCount = data.contains("inputCount") ? data.getInt("inputCount") : 0;
         this.inputStack = null;
-        this.output = data.contains("output") ? Registries.ITEMS.getValue(ResourceLocation.parse(data.getString("output"))) : null;
+        this.output = data.contains("output") ? Registries.ITEMS.getValue(new ResourceLocation(data.getString("output"))) : null;
         this.outputCount = data.contains("outputCount") ? data.getInt("outputCount") : 0;
         this.outputStack = null;
-        this.blankPatterns = data.contains("blankPatterns") ? ItemStack.parseOptional(CommonUtils.getRegistryAccess(), data.getCompound("blankPatterns")) : ItemStack.EMPTY;
-        this.encodedPatterns = data.contains("encodedPatterns") ? ItemStack.parseOptional(CommonUtils.getRegistryAccess(), data.getCompound("encodedPatterns")) : ItemStack.EMPTY;
+        this.blankPatterns = data.contains("blankPatterns") ? ItemStack.of(data.getCompound("blankPatterns")) : ItemStack.EMPTY;
+        this.encodedPatterns = data.contains("encodedPatterns") ? ItemStack.of(data.getCompound("encodedPatterns")) : ItemStack.EMPTY;
     }
 }

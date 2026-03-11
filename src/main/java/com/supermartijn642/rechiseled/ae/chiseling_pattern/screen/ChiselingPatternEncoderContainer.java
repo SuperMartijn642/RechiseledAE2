@@ -80,7 +80,7 @@ public class ChiselingPatternEncoderContainer extends BlockEntityBaseContainer<C
             .position(247, 84)
             .getter(() -> this.object.getBlankPatterns())
             .setter(stack -> this.object.setBlankPatterns(stack))
-            .filter(AEItems.BLANK_PATTERN::is)
+            .filter(AEItems.BLANK_PATTERN::isSameAs)
             .build().getVanillaSlot()
         );
         this.encodedPatternSlot = this.addSlot(CustomSlot.builder()
@@ -212,7 +212,7 @@ public class ChiselingPatternEncoderContainer extends BlockEntityBaseContainer<C
         }
 
         // Handle inventory click
-        if(AEItems.BLANK_PATTERN.is(stack) || PatternDetailsHelper.isEncodedPattern(stack)){
+        if(AEItems.BLANK_PATTERN.isSameAs(stack) || PatternDetailsHelper.isEncodedPattern(stack)){
             if(!this.moveItemStackTo(stack, 2, 4, false))
                 return ItemStack.EMPTY;
             slot.set(stack);
