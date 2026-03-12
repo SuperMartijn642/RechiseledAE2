@@ -18,6 +18,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
+import java.util.Random;
+
 /**
  * Created 14/02/2026 by SuperMartijn642
  */
@@ -27,6 +29,7 @@ public class ChiselingPatternEncoderBlockEntity extends BaseBlockEntity {
     private int inputCount, outputCount;
     private ItemStack inputStack, outputStack;
     private ItemStack blankPatterns = ItemStack.EMPTY, encodedPatterns = ItemStack.EMPTY;
+    private int rotationOffset = -1;
 
     public ChiselingPatternEncoderBlockEntity(BlockPos pos, BlockState state){
         super(RechiseledAE.chiseling_pattern_encoder_entity, pos, state);
@@ -192,6 +195,23 @@ public class ChiselingPatternEncoderBlockEntity extends BaseBlockEntity {
         this.dataChanged();
     }
 
+    public int getRotationOffset(){
+        if(this.rotationOffset == -1){
+            Random random = new Random(this.getBlockPos().asLong());
+            random.nextLong();
+            random.nextLong();
+            random.nextLong();
+            this.rotationOffset = random.nextInt(4);
+            this.dataChanged();
+        }
+        return this.rotationOffset;
+    }
+
+    public void increaseRotationOffset(){
+        this.rotationOffset = (this.getRotationOffset() + 1) % 4;
+        this.dataChanged();
+    }
+
     @Override
     protected CompoundTag writeData(){
         CompoundTag data = new CompoundTag();
@@ -207,6 +227,8 @@ public class ChiselingPatternEncoderBlockEntity extends BaseBlockEntity {
             data.put("blankPatterns", this.blankPatterns.save(new CompoundTag()));
         if(!this.encodedPatterns.isEmpty())
             data.put("encodedPatterns", this.encodedPatterns.save(new CompoundTag()));
+        if(this.rotationOffset != -1)
+            data.putInt("rotationOffset", this.rotationOffset);
         return data;
     }
 
@@ -220,5 +242,6 @@ public class ChiselingPatternEncoderBlockEntity extends BaseBlockEntity {
         this.outputStack = null;
         this.blankPatterns = data.contains("blankPatterns") ? ItemStack.of(data.getCompound("blankPatterns")) : ItemStack.EMPTY;
         this.encodedPatterns = data.contains("encodedPatterns") ? ItemStack.of(data.getCompound("encodedPatterns")) : ItemStack.EMPTY;
+        this.rotationOffset = data.contains("rotationOffset") ? data.getInt("rotationOffset") : -1;
     }
 }
