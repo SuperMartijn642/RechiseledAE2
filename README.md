@@ -1,4 +1,4 @@
-![Chiseling pattern encoder demo](https://i.imgur.com/iky83w6.gif)
+![Chiseling pattern encoder demo](https://github.com/SuperMartijn642/RechiseledAE2/blob/neoforge-1.21.1/.github/images/demo%20rounded.gif?raw=true)
 
 **Rechiseled: Applied Energistics 2** adds integration between Applied Energistics 2 and Rechiseled! The mod allows for autocrafting of recipes from Rechiseled with the storage systems from Applied Energistics 2 as well as adding 100+ new decorative variants of blocks in Applied Energistics 2!
 
