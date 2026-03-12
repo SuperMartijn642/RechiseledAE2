@@ -23,9 +23,7 @@ public class ChiselingPatternEncoderRenderer implements CustomBlockEntityRendere
         poseStack.pushPose();
         poseStack.translate(0.5, 10/16f, 0.5);
         // Apply random rotation based on block position
-        RANDOM.setSeed(entity.getBlockPos().asLong());
-        RANDOM.nextLong();RANDOM.nextLong();RANDOM.nextLong();
-        poseStack.mulPose(new Quaternionf().rotateY((float)Math.PI * RANDOM.nextInt(4) / 2));
+        poseStack.mulPose(new Quaternionf().rotateY((float)Math.PI * entity.getRotationOffset() / 2));
         // Render chisel
         poseStack.pushPose();
         poseStack.scale(0.5f, 1f, 0.5f);
