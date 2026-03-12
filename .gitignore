@@ -36,6 +36,6 @@ run/
 libs/
 lib/
 logs/
-images/
+/images/
 reference/
 desktop.ini
