@@ -52,8 +52,14 @@ public class ChiselingPatternEncoderBlock extends BaseBlock implements EntityHol
 
     @Override
     protected InteractionFeedback interact(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, Direction hitSide, Vec3 hitLocation){
-        if(!level.isClientSide)
-            CommonUtils.openContainer(new ChiselingPatternEncoderContainer(player, pos));
+        if(!level.isClientSide){
+            if(player.isShiftKeyDown()){
+                BlockEntity entity = level.getBlockEntity(pos);
+                if(entity instanceof ChiselingPatternEncoderBlockEntity)
+                    ((ChiselingPatternEncoderBlockEntity)entity).increaseRotationOffset();
+            }else
+                CommonUtils.openContainer(new ChiselingPatternEncoderContainer(player, pos));
+        }
         return InteractionFeedback.SUCCESS;
     }
 
