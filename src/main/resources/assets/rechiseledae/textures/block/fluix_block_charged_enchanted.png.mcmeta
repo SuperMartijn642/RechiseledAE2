@@ -1,7 +1,10 @@
 {
   "fusion": {
     "type": "connecting",
-    "layout": "full"
+    "layout": "full",
+    "connections": {
+      "type": "false"
+    }
   },
   "animation": {
     "interpolate": true,
