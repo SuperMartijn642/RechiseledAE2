@@ -1,12 +1,11 @@
 package com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.widgets;
 
-import com.supermartijn642.core.gui.ScreenUtils;
+import com.supermartijn642.core.gui.GuiGraphicsHelper;
 import com.supermartijn642.core.gui.widget.WidgetRenderContext;
 import com.supermartijn642.core.gui.widget.premade.AbstractButtonWidget;
-import com.supermartijn642.rechiseled.Rechiseled;
 import com.supermartijn642.rechiseled.ae.RechiseledAE;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 import java.util.function.BooleanSupplier;
 
@@ -15,7 +14,7 @@ import java.util.function.BooleanSupplier;
  */
 public class ToggleRotationButton extends AbstractButtonWidget {
 
-    private static final ResourceLocation TEXTURE = RechiseledAE.identifier("textures/screen/rotation_icon.png");
+    public static final Identifier TEXTURE = RechiseledAE.identifier("screen/rotation_icon");
 
     private final BooleanSupplier rotating;
     private final BooleanSupplier hasItem;
@@ -32,10 +31,9 @@ public class ToggleRotationButton extends AbstractButtonWidget {
     }
 
     @Override
-    public void render(WidgetRenderContext context, int mouseX, int mouseY){
-        ScreenUtils.bindTexture(TEXTURE);
-        ScreenUtils.drawTexture(context.poseStack(), this.x, this.y, this.width, this.height, this.rotating.getAsBoolean() ? 0 : 0.5f, this.isFocused() && this.hasItem.getAsBoolean() ? 0.5f : 0, 0.5f, 0.5f);
-        super.render(context, mouseX, mouseY);
+    public void render(WidgetRenderContext context, GuiGraphicsHelper graphics, int mouseX, int mouseY){
+        graphics.submitSprite(TEXTURE, this.x, this.y, this.width, this.height, p -> p.uv(this.rotating.getAsBoolean() ? 0 : 0.5f, this.isFocused() && this.hasItem.getAsBoolean() ? 0.5f : 0, 0.5f, 0.5f));
+        super.render(context, graphics, mouseX, mouseY);
     }
 
     @Override

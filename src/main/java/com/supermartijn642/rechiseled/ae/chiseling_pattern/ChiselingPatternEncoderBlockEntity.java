@@ -2,7 +2,6 @@ package com.supermartijn642.rechiseled.ae.chiseling_pattern;
 
 import appeng.api.crafting.PatternDetailsHelper;
 import appeng.core.definitions.AEItems;
-import com.supermartijn642.core.CommonUtils;
 import com.supermartijn642.core.block.BaseBlockEntity;
 import com.supermartijn642.core.registry.Registries;
 import com.supermartijn642.rechiseled.ae.RechiseledAE;
@@ -12,12 +11,13 @@ import com.supermartijn642.rechiseled.api.chiseling.ItemWithWorth;
 import com.supermartijn642.rechiseled.api.chiseling.conversion.ChiselingConversionHelper;
 import com.supermartijn642.rechiseled.api.chiseling.conversion.ConversionResult;
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 
 import java.util.Random;
 
@@ -62,14 +62,14 @@ public class ChiselingPatternEncoderBlockEntity extends BaseBlockEntity {
             this.output = input;
             this.outputStack = null;
         }else{
-            ChiselingRecipe recipe = ChiselingRecipeManager.get(this.level.isClientSide).getRecipeForItem(this.input);
+            ChiselingRecipe recipe = ChiselingRecipeManager.get(this.level.isClientSide()).getRecipeForItem(this.input);
             if(recipe == null || !recipe.contains(this.output)){
                 this.output = this.input;
                 this.outputStack = null;
             }
         }
         // Update block state
-        if(!this.level.isClientSide){
+        if(!this.level.isClientSide()){
             BlockState state = this.getBlockState();
             if((input == null) == state.getValue(ChiselingPatternEncoderBlock.ON))
                 this.level.setBlock(this.worldPosition, state.setValue(ChiselingPatternEncoderBlock.ON, input != null), Block.UPDATE_CLIENTS);
@@ -129,7 +129,7 @@ public class ChiselingPatternEncoderBlockEntity extends BaseBlockEntity {
             this.inputCount = this.outputCount = 0;
             return;
         }
-        ChiselingRecipe recipe = ChiselingRecipeManager.get(this.level.isClientSide).getRecipeForItem(this.input);
+        ChiselingRecipe recipe = ChiselingRecipeManager.get(this.level.isClientSide()).getRecipeForItem(this.input);
         if(recipe == null || !recipe.contains(this.output)){
             this.inputCount = this.outputCount = 0;
             return;
@@ -180,7 +180,7 @@ public class ChiselingPatternEncoderBlockEntity extends BaseBlockEntity {
             return;
 
         // Validate recipe
-        ChiselingRecipe recipe = ChiselingRecipeManager.get(this.level.isClientSide).getRecipeForItem(this.input);
+        ChiselingRecipe recipe = ChiselingRecipeManager.get(this.level.isClientSide()).getRecipeForItem(this.input);
         if(recipe == null || !recipe.contains(this.output))
             return;
 
@@ -214,35 +214,32 @@ public class ChiselingPatternEncoderBlockEntity extends BaseBlockEntity {
     }
 
     @Override
-    protected CompoundTag writeData(){
-        CompoundTag data = new CompoundTag();
+    protected void writeData(ValueOutput output){
         if(this.input != null){
-            data.putString("input", Registries.ITEMS.getIdentifier(this.input).toString());
-            data.putInt("inputCount", this.inputCount);
+            output.putString("input", Registries.ITEMS.getIdentifier(this.input).toString());
+            output.putInt("inputCount", this.inputCount);
         }
         if(this.output != null){
-            data.putString("output", Registries.ITEMS.getIdentifier(this.output).toString());
-            data.putInt("outputCount", this.outputCount);
+            output.putString("output", Registries.ITEMS.getIdentifier(this.output).toString());
+            output.putInt("outputCount", this.outputCount);
         }
         if(!this.blankPatterns.isEmpty())
-            data.put("blankPatterns", this.blankPatterns.save(this.level.registryAccess()));
+            output.store("blankPatterns", ItemStack.OPTIONAL_CODEC, this.blankPatterns);
         if(!this.encodedPatterns.isEmpty())
-            data.put("encodedPatterns", this.encodedPatterns.save(this.level.registryAccess()));
+            output.store("encodedPatterns", ItemStack.OPTIONAL_CODEC, this.encodedPatterns);
         if(this.rotationOffset != -1)
-            data.putInt("rotationOffset", this.rotationOffset);
-        return data;
+            output.putInt("rotationOffset", this.rotationOffset);
     }
 
     @Override
-    protected void readData(CompoundTag data){
-        this.input = data.contains("input") ? Registries.ITEMS.getValue(ResourceLocation.parse(data.getString("input"))) : null;
-        this.inputCount = data.contains("inputCount") ? data.getInt("inputCount") : 0;
+    protected void readData(ValueInput input){
+        this.input = input.getString("input").map(s -> Registries.ITEMS.getValue(Identifier.parse(s))).orElse(null);
+        this.inputCount = input.getIntOr("inputCount", 0);
         this.inputStack = null;
-        this.output = data.contains("output") ? Registries.ITEMS.getValue(ResourceLocation.parse(data.getString("output"))) : null;
-        this.outputCount = data.contains("outputCount") ? data.getInt("outputCount") : 0;
+        this.output = input.getString("output").map(s -> Registries.ITEMS.getValue(Identifier.parse(s))).orElse(null);
+        this.outputCount = input.getIntOr("outputCount", 0);
         this.outputStack = null;
-        this.blankPatterns = data.contains("blankPatterns") ? ItemStack.parseOptional(CommonUtils.getRegistryAccess(), data.getCompound("blankPatterns")) : ItemStack.EMPTY;
-        this.encodedPatterns = data.contains("encodedPatterns") ? ItemStack.parseOptional(CommonUtils.getRegistryAccess(), data.getCompound("encodedPatterns")) : ItemStack.EMPTY;
-        this.rotationOffset = data.contains("rotationOffset") ? data.getInt("rotationOffset") : -1;
+        this.blankPatterns = input.read("blankPatterns", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY);
+        this.encodedPatterns = input.read("encodedPatterns", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY);
     }
 }

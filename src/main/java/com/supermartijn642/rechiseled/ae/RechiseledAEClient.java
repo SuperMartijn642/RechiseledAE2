@@ -3,12 +3,12 @@ package com.supermartijn642.rechiseled.ae;
 import appeng.crafting.pattern.EncodedPatternItem;
 import com.supermartijn642.core.gui.WidgetContainerScreen;
 import com.supermartijn642.core.registry.ClientRegistrationHandler;
-import com.supermartijn642.core.render.CustomRendererBakedModelWrapper;
-import com.supermartijn642.rechiseled.ae.chiseling_pattern.ChiselingPatternEncoderItemRenderer;
+import com.supermartijn642.rechiseled.ae.chiseling_pattern.ChiselingPatternEncoderItemModel;
 import com.supermartijn642.rechiseled.ae.chiseling_pattern.ChiselingPatternEncoderRenderer;
 import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.ChiselingPatternEncoderContainer;
 import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.ChiselingPatternEncoderScreen;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.renderer.item.CuboidItemModelWrapper;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
@@ -23,7 +23,7 @@ public class RechiseledAEClient {
         handler.registerCustomBlockEntityRenderer(() -> RechiseledAE.chiseling_pattern_encoder_entity, ChiselingPatternEncoderRenderer::new);
         handler.registerContainerScreen(ChiselingPatternEncoderContainer.TYPE, container -> new WidgetContainerScreen<>(new ChiselingPatternEncoderScreen(), container, false) {
             @Override
-            protected void renderSlotContents(GuiGraphics graphics, ItemStack stack, Slot slot, @Nullable String count){
+            protected void renderSlotContents(GuiGraphicsExtractor graphics, ItemStack stack, Slot slot, @Nullable String count){
                 // For encoded pattern slot, override the displayed item
                 if(slot == this.container.encodedPatternSlot && stack.getItem() instanceof EncodedPatternItem<?> pattern){
                     ItemStack output = pattern.getOutput(stack);
@@ -33,7 +33,6 @@ public class RechiseledAEClient {
                 super.renderSlotContents(graphics, stack, slot, count);
             }
         });
-        handler.registerCustomItemRenderer(() -> RechiseledAE.chiseling_pattern_encoder.asItem(), ChiselingPatternEncoderItemRenderer::new);
-        handler.registerItemModelOverwrite(() -> RechiseledAE.chiseling_pattern_encoder.asItem(), CustomRendererBakedModelWrapper::wrap);
+        handler.registerItemModelOverwrite(() -> RechiseledAE.chiseling_pattern_encoder.asItem(), m -> m instanceof CuboidItemModelWrapper ? new ChiselingPatternEncoderItemModel((CuboidItemModelWrapper)m) : m);
     }
 }

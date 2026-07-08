@@ -10,7 +10,6 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 
 /**
  * Created 13/02/2026 by SuperMartijn642
@@ -19,7 +18,7 @@ public record EncodedChiselingPattern(Item input, Item output) {
 
     // Item codecs
     @SuppressWarnings("deprecation")
-    private static final Codec<Item> ITEM_CODEC = ItemStack.ITEM_NON_AIR_CODEC.xmap(Holder::value, Item::builtInRegistryHolder);
+    private static final Codec<Item> ITEM_CODEC = Item.CODEC.xmap(Holder::value, Item::builtInRegistryHolder);
     @SuppressWarnings("deprecation")
     private static final StreamCodec<RegistryFriendlyByteBuf,Item> ITEM_STREAM_CODEC = ByteBufCodecs.holderRegistry(Registries.ITEM).map(Holder::value, Item::builtInRegistryHolder);
 
@@ -39,7 +38,7 @@ public record EncodedChiselingPattern(Item input, Item output) {
         .networkSynchronized(STREAM_CODEC)
         .build();
 
-    public EncodedChiselingPattern {
+    public EncodedChiselingPattern{
         if(input == null || output == null)
             throw new IllegalArgumentException("Input and output must not be null!");
     }

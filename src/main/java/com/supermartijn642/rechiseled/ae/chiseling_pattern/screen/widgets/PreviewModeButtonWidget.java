@@ -1,13 +1,13 @@
 package com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.widgets;
 
 import com.supermartijn642.core.TextComponents;
-import com.supermartijn642.core.gui.ScreenUtils;
+import com.supermartijn642.core.gui.GuiGraphicsHelper;
 import com.supermartijn642.core.gui.widget.WidgetRenderContext;
 import com.supermartijn642.core.gui.widget.premade.AbstractButtonWidget;
 import com.supermartijn642.rechiseled.ae.RechiseledAE;
 import com.supermartijn642.rechiseled.screen.preview.PreviewMode;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 import java.util.function.Supplier;
 
@@ -16,7 +16,7 @@ import java.util.function.Supplier;
  */
 public class PreviewModeButtonWidget extends AbstractButtonWidget {
 
-    private static final ResourceLocation PREVIEW_BUTTONS = RechiseledAE.identifier("textures/screen/preview_buttons.png");
+    public static final Identifier PREVIEW_BUTTONS = RechiseledAE.identifier("screen/preview_buttons");
 
     private final PreviewMode mode;
     private final Supplier<PreviewMode> currentMode;
@@ -44,12 +44,10 @@ public class PreviewModeButtonWidget extends AbstractButtonWidget {
     }
 
     @Override
-    public void render(WidgetRenderContext context, int mouseX, int mouseY){
+    public void render(WidgetRenderContext context, GuiGraphicsHelper graphics, int mouseX, int mouseY){
         boolean selected = this.mode == this.currentMode.get();
-        ScreenUtils.bindTexture(PREVIEW_BUTTONS);
-        ScreenUtils.drawTexture(context.poseStack(), this.x, this.y, this.width, this.height, 0, (!this.isClickable() ? 2 : this.isFocused() ? 1 : 0) / 3f, 1, 1 / 3f);
-        ScreenUtils.bindTexture(this.mode.icon(selected));
+        graphics.submitSprite(PREVIEW_BUTTONS, this.x, this.y, this.width, this.height, p -> p.uv(0, (!this.isClickable() ? 2 : this.isFocused() ? 1 : 0) / 3f, 1, 1 / 3f));
         int offset = !this.isClickable() ? 2 : this.isFocused() ? 1 : 0;
-        ScreenUtils.drawTexture(context.poseStack(), this.x + 2, this.y + 1 + offset, this.width - 4, this.width - 4);
+        graphics.submitSprite(this.mode.icon(selected), this.x + 2, this.y + 1 + offset, this.width - 4, this.width - 4);
     }
 }

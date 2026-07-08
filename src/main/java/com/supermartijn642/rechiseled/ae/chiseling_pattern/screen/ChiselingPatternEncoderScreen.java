@@ -2,7 +2,7 @@ package com.supermartijn642.rechiseled.ae.chiseling_pattern.screen;
 
 import com.supermartijn642.core.ClientUtils;
 import com.supermartijn642.core.TextComponents;
-import com.supermartijn642.core.gui.ScreenUtils;
+import com.supermartijn642.core.gui.GuiGraphicsHelper;
 import com.supermartijn642.core.gui.widget.BaseContainerWidget;
 import com.supermartijn642.core.gui.widget.WidgetRenderContext;
 import com.supermartijn642.core.gui.widget.premade.ScissorWidget;
@@ -15,7 +15,7 @@ import com.supermartijn642.rechiseled.api.chiseling.*;
 import com.supermartijn642.rechiseled.screen.preview.PreviewMode;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -33,8 +33,8 @@ import java.util.function.Supplier;
  */
 public class ChiselingPatternEncoderScreen extends BaseContainerWidget<ChiselingPatternEncoderContainer> {
 
-    private static final ResourceLocation BACKGROUND = RechiseledAE.identifier("textures/screen/encoder_background.png");
-    private static final ResourceLocation SCROLLER = RechiseledAE.identifier("textures/screen/scroller.png");
+    public static final Identifier BACKGROUND = RechiseledAE.identifier("screen/encoder_background");
+    public static final Identifier SCROLLER = RechiseledAE.identifier("screen/scroller");
     private static final int OPTION_ROWS = 6, OPTION_COLUMNS = 6;
 
     private static PreviewMode previewMode = PreviewMode.SINGLE;
@@ -150,15 +150,14 @@ public class ChiselingPatternEncoderScreen extends BaseContainerWidget<Chiseling
     }
 
     @Override
-    public void renderBackground(WidgetRenderContext context, int mouseX, int mouseY){
-        ScreenUtils.bindTexture(BACKGROUND);
-        ScreenUtils.drawTexture(context.poseStack(), 0, 0, this.width, this.height);
-        super.renderBackground(context, mouseX, mouseY);
+    public void renderBackground(WidgetRenderContext context, GuiGraphicsHelper graphics, int mouseX, int mouseY){
+        graphics.submitSprite(BACKGROUND, 0, 0, this.width, this.height);
+        super.renderBackground(context, graphics, mouseX, mouseY);
     }
 
     @Override
-    public void render(WidgetRenderContext context, int mouseX, int mouseY){
-        super.render(context, mouseX, mouseY);
+    public void render(WidgetRenderContext context, GuiGraphicsHelper graphics, int mouseX, int mouseY){
+        super.render(context, graphics, mouseX, mouseY);
         // Highlight blocks that can chiseled
         for(int index = 4; index < this.container.slots.size(); index++){
             Slot slot = this.container.getSlot(index);
@@ -168,17 +167,17 @@ public class ChiselingPatternEncoderScreen extends BaseContainerWidget<Chiseling
 
             // Check if the stack is in the current recipe
             if(this.recipe != null && this.recipe.contains(stack.getItem()))
-                ScreenUtils.fillRect(context.poseStack(), slot.x + 13, slot.y, 3, 3, 52 / 355f, 108 / 355f, 173 / 355f, 0.5f);
+                graphics.submitRectangle(slot.x + 13, slot.y, 3, 3, p -> p.color(52, 108, 173, 128));
             else if(ChiselingRecipeManager.get(true).getRecipeForItem(stack.getItem()) != null)
-                ScreenUtils.fillRect(context.poseStack(), slot.x + 13, slot.y, 3, 3, 1, 207 / 355f, 74 / 355f, 0.5f);
+                graphics.submitRectangle(slot.x + 13, slot.y, 3, 3, p -> p.color(255, 207, 74, 128));
         }
     }
 
     @Override
-    public void renderForeground(WidgetRenderContext context, int mouseX, int mouseY){
-        super.renderForeground(context, mouseX, mouseY);
-        ScreenUtils.drawString(context.poseStack(), this.title, 8, 6);
-        ScreenUtils.drawString(context.poseStack(), ClientUtils.getPlayer().getInventory().getName(), 57, 154);
+    public void renderForeground(WidgetRenderContext context, GuiGraphicsHelper graphics, int mouseX, int mouseY){
+        super.renderForeground(context, graphics, mouseX, mouseY);
+        graphics.submitText(this.title, 8, 6);
+        graphics.submitText(ClientUtils.getPlayer().getInventory().getName(), 57, 154);
     }
 
     private void updateDisplayEntries(){
@@ -256,7 +255,7 @@ public class ChiselingPatternEncoderScreen extends BaseContainerWidget<Chiseling
         if(isModSearch){
             if(formattedSearchText.length() == 1)
                 return true;
-            ResourceLocation identifier = BuiltInRegistries.ITEM.getKey(item);
+            Identifier identifier = BuiltInRegistries.ITEM.getKey(item);
             if(identifier.getNamespace().toLowerCase().startsWith(formattedSearchText.substring(1)))
                 return true;
             String modName = ModList.get().getModContainerById(identifier.getNamespace()).map(ModContainer::getModInfo).map(IModInfo::getDisplayName).orElse(null);

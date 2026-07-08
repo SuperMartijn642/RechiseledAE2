@@ -14,11 +14,11 @@
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/fluix_block_polished_bricks"
+      "resource": "rechiseledae:block/sky_stone_block_bordered_squares"
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/sky_stone_block_bordered_squares"
+      "resource": "rechiseledae:block/fluix_block_polished_bricks"
     },
     {
       "type": "minecraft:single",
@@ -90,11 +90,11 @@
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/certus_quartz_block_cut_pillar_side"
+      "resource": "rechiseledae:block/certus_quartz_block_crystallized"
     },
     {
       "type": "minecraft:single",
-      "resource": "rechiseledae:block/certus_quartz_block_crystallized"
+      "resource": "rechiseledae:block/certus_quartz_block_cut_pillar_side"
     },
     {
       "type": "minecraft:single",

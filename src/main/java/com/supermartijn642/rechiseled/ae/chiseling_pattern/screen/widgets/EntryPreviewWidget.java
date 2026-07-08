@@ -1,13 +1,15 @@
 package com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.widgets;
 
-import com.supermartijn642.core.gui.CursorType;
+import com.mojang.blaze3d.platform.cursor.CursorType;
 import com.supermartijn642.core.gui.CursorTypes;
+import com.supermartijn642.core.gui.GuiGraphicsHelper;
 import com.supermartijn642.core.gui.widget.BaseWidget;
 import com.supermartijn642.core.gui.widget.WidgetRenderContext;
 import com.supermartijn642.rechiseled.screen.preview.BlockCapture;
 import com.supermartijn642.rechiseled.screen.preview.PreviewMode;
 import com.supermartijn642.rechiseled.screen.preview.ScreenBlockRenderer;
 import com.supermartijn642.rechiseled.screen.preview.ScreenItemRenderer;
+import net.minecraft.client.input.MouseButtonInfo;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
@@ -30,6 +32,7 @@ public class EntryPreviewWidget extends BaseWidget {
 
     private final Supplier<Item> item;
     private final Supplier<PreviewMode> previewMode;
+    private final ScreenBlockRenderer.RenderState blockRenderState = new ScreenBlockRenderer.RenderState();
 
     private long lastRotationTime;
     private boolean dragging = false;
@@ -62,7 +65,7 @@ public class EntryPreviewWidget extends BaseWidget {
     }
 
     @Override
-    public void render(WidgetRenderContext context, int mouseX, int mouseY){
+    public void render(WidgetRenderContext context, GuiGraphicsHelper graphics, int mouseX, int mouseY){
         long now = System.currentTimeMillis();
 
         Item item = this.item.get();
@@ -100,21 +103,29 @@ public class EntryPreviewWidget extends BaseWidget {
                             capture.putBlock(new BlockPos(x, y, 0), (BlockState)null);
                     }
                 }
-                ScreenBlockRenderer.drawBlock(context.poseStack(), capture, this.x + this.width / 2d, this.y + this.height / 2d, this.height, yaw, pitch, true);
+                ScreenBlockRenderer.updateState(this.blockRenderState, capture);
+                graphics.nextStratum();
+                graphics.submitFeatures(
+                    this.x, this.y, this.width, this.height,
+                    (poseStack, output) -> ScreenBlockRenderer.submit(output, poseStack, this.blockRenderState, this.width / 2d, this.height / 2d, this.height, yaw, pitch)
+                );
             }else{
                 // Render item
-                ScreenItemRenderer.drawItem(context.poseStack(), item, this.x + this.width / 2d, this.y + this.height / 2d, this.height, yaw, pitch, true);
+                graphics.submitFeatures(
+                    this.x, this.y, this.width, this.height,
+                    (poseStack, output) -> ScreenItemRenderer.submitItem(poseStack, output, item, this.width / 2d, this.height / 2d, this.height, yaw, pitch)
+                );
             }
         }
 
         this.lastRotationTime = now;
 
-        super.render(context, mouseX, mouseY);
+        super.render(context, graphics, mouseX, mouseY);
     }
 
     @Override
-    public boolean mousePressed(int mouseX, int mouseY, int button, boolean hasBeenHandled){
-        hasBeenHandled |= super.mousePressed(mouseX, mouseY, button, hasBeenHandled);
+    public boolean mousePressed(int mouseX, int mouseY, MouseButtonInfo info, boolean isDoubleClick, boolean hasBeenHandled){
+        hasBeenHandled |= super.mousePressed(mouseX, mouseY, info, isDoubleClick, hasBeenHandled);
         if(!hasBeenHandled && mouseX >= this.x && mouseX < this.x + this.width && mouseY >= this.y && mouseY < this.y + this.height){
             this.dragging = true;
             this.mouseStartX = mouseX;
@@ -125,8 +136,8 @@ public class EntryPreviewWidget extends BaseWidget {
     }
 
     @Override
-    public boolean mouseReleased(int mouseX, int mouseY, int button, boolean hasBeenHandled){
+    public boolean mouseReleased(int mouseX, int mouseY, MouseButtonInfo info, boolean hasBeenHandled){
         this.dragging = false;
-        return super.mouseReleased(mouseX, mouseY, button, hasBeenHandled);
+        return super.mouseReleased(mouseX, mouseY, info, hasBeenHandled);
     }
 }

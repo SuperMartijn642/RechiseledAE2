@@ -2,7 +2,6 @@ package com.supermartijn642.rechiseled.ae;
 
 import appeng.api.crafting.PatternDetailsHelper;
 import appeng.core.definitions.AEBlocks;
-import appeng.core.definitions.AEItems;
 import com.supermartijn642.core.CommonUtils;
 import com.supermartijn642.core.TextComponents;
 import com.supermartijn642.core.block.BaseBlock;
@@ -20,8 +19,10 @@ import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.packet.PacketE
 import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.packet.PacketSelectEntry;
 import com.supermartijn642.rechiseled.api.registration.RechiseledRegistration;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
@@ -37,8 +38,8 @@ public class RechiseledAE {
 
     public static final String MODID = "rechiseledae";
 
-    public static ResourceLocation identifier(String path){
-        return ResourceLocation.fromNamespaceAndPath(MODID, path);
+    public static Identifier identifier(String path){
+        return Identifier.fromNamespaceAndPath(MODID, path);
     }
 
     public static final RechiseledRegistration REGISTRATION = RechiseledRegistration.get(MODID);
@@ -63,7 +64,7 @@ public class RechiseledAE {
 
         // Register everything for chiseling patterns
         RegistrationHandler handler = RegistrationHandler.get(MODID);
-        handler.registerItem("chiseling_pattern", () -> PatternDetailsHelper.encodedPatternItemBuilder(ChiselingPattern::new).invalidPatternTooltip(ChiselingPattern::getInvalidTooltip).build());
+        handler.registerItem("chiseling_pattern", () -> PatternDetailsHelper.encodedPatternItemBuilder(ChiselingPattern::new).invalidPatternTooltip(ChiselingPattern::getInvalidTooltip).build(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, identifier("chiseling_pattern")))));
         handler.registerDataComponentType("encoded_chiseling_pattern", EncodedChiselingPattern.COMPONENT_TYPE);
         handler.registerBlock("chiseling_pattern_encoder", ChiselingPatternEncoderBlock::new);
         handler.registerItem("chiseling_pattern_encoder", () -> new BaseBlockItem(chiseling_pattern_encoder, ItemProperties.create().group(GROUP)){

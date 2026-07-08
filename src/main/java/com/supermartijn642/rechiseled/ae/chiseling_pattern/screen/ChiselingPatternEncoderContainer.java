@@ -9,7 +9,7 @@ import com.supermartijn642.rechiseled.ae.chiseling_pattern.ChiselingPatternEncod
 import com.supermartijn642.rechiseled.api.chiseling.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.ClickType;
+import net.minecraft.world.inventory.ContainerInput;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -179,8 +179,8 @@ public class ChiselingPatternEncoderContainer extends BlockEntityBaseContainer<C
     }
 
     @Override
-    public void clicked(int slotIndex, int button, ClickType clickType, Player player){
-        if(clickType == ClickType.PICKUP && (slotIndex == 0 || slotIndex == 1)){
+    public void clicked(int slotIndex, int button, ContainerInput input, Player player){
+        if(input == ContainerInput.PICKUP && (slotIndex == 0 || slotIndex == 1)){
             ItemStack carried = this.getCarried();
             Item item = carried.isEmpty() ? null : carried.getItem();
             if(slotIndex == 0)
@@ -189,7 +189,7 @@ public class ChiselingPatternEncoderContainer extends BlockEntityBaseContainer<C
                 this.object.trySetOutput(item);
             return;
         }
-        super.clicked(slotIndex, button, clickType, player);
+        super.clicked(slotIndex, button, input, player);
     }
 
     @Override

@@ -5,7 +5,7 @@ import com.supermartijn642.rechiseled.compat.jei.ChiselingJEIPlugin;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 /**
  * Created 19/02/2026 by SuperMartijn642
@@ -14,12 +14,12 @@ import net.minecraft.resources.ResourceLocation;
 public class RechiseledCreateJEIPlugin implements IModPlugin {
 
     @Override
-    public ResourceLocation getPluginUid(){
-        return ResourceLocation.fromNamespaceAndPath(RechiseledAE.MODID, "chiseling_plugin");
+    public Identifier getPluginUid(){
+        return Identifier.fromNamespaceAndPath(RechiseledAE.MODID, "chiseling_plugin");
     }
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration){
-        registration.addRecipeCatalyst(RechiseledAE.chiseling_pattern_encoder, ChiselingJEIPlugin.CHISELING_RECIPE_TYPE);
+        registration.addCraftingStation(ChiselingJEIPlugin.CHISELING_RECIPE_TYPE, RechiseledAE.chiseling_pattern_encoder);
     }
 }

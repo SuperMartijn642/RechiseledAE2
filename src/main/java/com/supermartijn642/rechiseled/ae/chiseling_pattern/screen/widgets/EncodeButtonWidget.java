@@ -1,13 +1,13 @@
 package com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.widgets;
 
 import com.supermartijn642.core.TextComponents;
-import com.supermartijn642.core.gui.ScreenUtils;
+import com.supermartijn642.core.gui.GuiGraphicsHelper;
 import com.supermartijn642.core.gui.widget.WidgetRenderContext;
 import com.supermartijn642.core.gui.widget.premade.AbstractButtonWidget;
 import com.supermartijn642.rechiseled.ae.RechiseledAE;
 import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.packet.PacketEncodePattern;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -17,7 +17,7 @@ import java.util.function.Supplier;
  */
 public class EncodeButtonWidget extends AbstractButtonWidget {
 
-    private static final ResourceLocation BUTTONS = RechiseledAE.identifier("textures/screen/encode_buttons.png");
+    public static final Identifier BUTTONS = RechiseledAE.identifier("screen/encode_buttons");
 
     private final Supplier<Boolean> canEncode;
 
@@ -42,12 +42,11 @@ public class EncodeButtonWidget extends AbstractButtonWidget {
     }
 
     @Override
-    public void render(WidgetRenderContext context, int mouseX, int mouseY){
-        ScreenUtils.bindTexture(BUTTONS);
-        ScreenUtils.drawTexture(
-            context.poseStack(),
+    public void render(WidgetRenderContext context, GuiGraphicsHelper graphics, int mouseX, int mouseY){
+        graphics.submitSprite(
+            BUTTONS,
             this.x, this.y, this.width, this.height,
-            0, this.isClickable() ? this.isFocused() ? 1 / 3f : 0 : 2 / 3f, 1, 1 / 3f
+            p -> p.uv(0, this.isClickable() ? this.isFocused() ? 1 / 3f : 0 : 2 / 3f, 1, 1 / 3f)
         );
     }
 }

@@ -5,18 +5,10 @@
     "CDC"
   ],
   "key": {
-    "A": {
-      "tag": "c:glass_blocks/cheap"
-    },
-    "B": {
-      "item": "rechiseled:chisel"
-    },
-    "C": {
-      "tag": "c:ingots/iron"
-    },
-    "D": {
-      "tag": "c:ingots/copper"
-    }
+    "A": "#c:glass_blocks/cheap",
+    "B": "rechiseled:chisel",
+    "C": "#c:ingots/iron",
+    "D": "#c:ingots/copper"
   },
   "result": {
     "id": "rechiseledae:chiseling_pattern_encoder"

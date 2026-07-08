@@ -1,7 +1,7 @@
 package com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.widgets;
 
 import com.supermartijn642.core.TextComponents;
-import com.supermartijn642.core.gui.ScreenUtils;
+import com.supermartijn642.core.gui.GuiGraphicsHelper;
 import com.supermartijn642.core.gui.widget.WidgetRenderContext;
 import com.supermartijn642.core.gui.widget.premade.AbstractButtonWidget;
 import com.supermartijn642.core.util.Holder;
@@ -9,7 +9,7 @@ import com.supermartijn642.rechiseled.Rechiseled;
 import com.supermartijn642.rechiseled.ae.RechiseledAE;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -19,9 +19,9 @@ import java.util.function.Supplier;
  */
 public class ConnectingToggleWidget extends AbstractButtonWidget {
 
-    private static final ResourceLocation TOGGLE_BUTTONS = RechiseledAE.identifier("textures/screen/toggle_buttons.png");
-    private static final ResourceLocation ICON_CONNECTED_ON = Rechiseled.identifier("textures/screen/icon_connecting_true.png");
-    private static final ResourceLocation ICON_CONNECTED_OFF = Rechiseled.identifier("textures/screen/icon_connecting_false.png");
+    public static final Identifier TOGGLE_BUTTONS = RechiseledAE.identifier("screen/toggle_buttons");
+    public static final Identifier ICON_CONNECTED_ON = Rechiseled.identifier("screen/icon_connecting_true");
+    public static final Identifier ICON_CONNECTED_OFF = Rechiseled.identifier("screen/icon_connecting_false");
 
     private final Supplier<Boolean> connecting;
     private final Supplier<DisplayEntry> currentEntry;
@@ -52,29 +52,33 @@ public class ConnectingToggleWidget extends AbstractButtonWidget {
     }
 
     @Override
-    public void renderBackground(WidgetRenderContext context, int mouseX, int mouseY){
+    public void renderBackground(WidgetRenderContext context, GuiGraphicsHelper graphics, int mouseX, int mouseY){
         // Toggle background
         boolean canSwitch = this.isClickable();
-        ScreenUtils.bindTexture(TOGGLE_BUTTONS);
-        ScreenUtils.drawTexture(
-            context.poseStack(),
+        graphics.submitSprite(
+            TOGGLE_BUTTONS,
             this.x, this.y, this.width, this.height,
-            this.connecting.get() ? 0 : 0.25f,
-            (canSwitch ? this.isFocused() ? 1 : 0 : 2) / 3f,
-            1 / 4f, 1 / 3f
+            p -> p.uv(
+                this.connecting.get() ? 0 : 0.25f,
+                (canSwitch ? this.isFocused() ? 1 : 0 : 2) / 3f,
+                1 / 4f, 1 / 3f
+            )
         );
         // Icon
         boolean connecting = this.connecting.get();
-        ScreenUtils.bindTexture(connecting ? ICON_CONNECTED_ON : ICON_CONNECTED_OFF);
-        ScreenUtils.drawTexture(context.poseStack(), connecting ? this.x + 1 : this.x + 12, this.y + 2, 9, 9);
+        graphics.submitSprite(
+            connecting ? ICON_CONNECTED_ON : ICON_CONNECTED_OFF,
+            connecting ? this.x + 1 : this.x + 12, this.y + 2, 9, 9
+        );
         // Toggle overlay
-        ScreenUtils.bindTexture(TOGGLE_BUTTONS);
-        ScreenUtils.drawTexture(
-            context.poseStack(),
+        graphics.submitSprite(
+            TOGGLE_BUTTONS,
             this.x, this.y, this.width, this.height,
-            this.connecting.get() ? 0.5f : 0.75f,
-            (canSwitch ? this.isFocused() ? 1 : 0 : 2) / 3f,
-            1 / 4f, 1 / 3f
+            p -> p.uv(
+                this.connecting.get() ? 0.5f : 0.75f,
+                (canSwitch ? this.isFocused() ? 1 : 0 : 2) / 3f,
+                1 / 4f, 1 / 3f
+            )
         );
     }
 }

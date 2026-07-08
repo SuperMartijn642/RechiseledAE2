@@ -1,7 +1,7 @@
 package com.supermartijn642.rechiseled.ae;
 
 import com.supermartijn642.core.registry.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.ItemLike;
 
 import java.util.function.Supplier;
@@ -13,16 +13,16 @@ import static com.supermartijn642.rechiseled.ae.RechiseledAE.REGISTRATION;
  */
 public class RechiseledAERecipes {
 
-    public static final ResourceLocation CERTUS_QUARTZ_BLOCK = location("certus_quartz_block");
-    public static final ResourceLocation FLUIX_BLOCK = location("fluix_block");
-    public static final ResourceLocation SKY_STONE_BLOCK = location("sky_stone_block");
+    public static final Identifier CERTUS_QUARTZ_BLOCK = location("certus_quartz_block");
+    public static final Identifier FLUIX_BLOCK = location("fluix_block");
+    public static final Identifier SKY_STONE_BLOCK = location("sky_stone_block");
 
-    private static ResourceLocation location(String name){
-        return ResourceLocation.fromNamespaceAndPath(RechiseledAE.MODID, name);
+    private static Identifier location(String name){
+        return Identifier.fromNamespaceAndPath(RechiseledAE.MODID, name);
     }
 
     private static Supplier<ItemLike> getBlock(String identifier){
-        ResourceLocation location = ResourceLocation.parse(identifier);
+        Identifier location = Identifier.parse(identifier);
         return () -> {
             if(!Registries.BLOCKS.hasIdentifier(location))
                 throw new RuntimeException("Unknown block '" + identifier + "'!");
@@ -37,7 +37,7 @@ public class RechiseledAERecipes {
         regularSet(CERTUS_QUARTZ_BLOCK, "ae2:chiseled_quartz_block", "ae2:chiseled_quartz_stairs", "ae2:chiseled_quartz_slab");
     }
 
-    private static void regularSet(ResourceLocation recipe, String blockIdentifier, String stairsIdentifier, String slabIdentifier){
+    private static void regularSet(Identifier recipe, String blockIdentifier, String stairsIdentifier, String slabIdentifier){
         Supplier<ItemLike> block = getBlock(blockIdentifier);
         Supplier<ItemLike> stairs = getBlock(stairsIdentifier);
         Supplier<ItemLike> slab = getBlock(slabIdentifier);

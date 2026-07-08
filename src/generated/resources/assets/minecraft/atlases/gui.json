@@ -1,0 +1,56 @@
+{
+  "sources": [
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:screen/encode_buttons"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:screen/scroller"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseled:screen/icon_connecting_true"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseled:screen/icon_1x1"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseled:screen/icon_slab"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseled:screen/icon_connecting_false"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:screen/toggle_buttons"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:screen/encoder_background"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:screen/entry_buttons"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:screen/rotation_icon"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:screen/shape_buttons"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseled:screen/icon_stairs"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "rechiseledae:screen/preview_buttons"
+    }
+  ]
+}

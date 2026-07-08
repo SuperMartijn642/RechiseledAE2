@@ -2,17 +2,16 @@ package com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.widgets;
 
 import com.supermartijn642.core.ClientUtils;
 import com.supermartijn642.core.TextComponents;
-import com.supermartijn642.core.gui.ScreenUtils;
+import com.supermartijn642.core.gui.GuiGraphicsHelper;
 import com.supermartijn642.core.gui.widget.WidgetRenderContext;
 import com.supermartijn642.core.gui.widget.premade.AbstractButtonWidget;
-import com.supermartijn642.rechiseled.Rechiseled;
 import com.supermartijn642.rechiseled.ae.RechiseledAE;
 import com.supermartijn642.rechiseled.api.chiseling.ItemWithWorth;
 import com.supermartijn642.rechiseled.chiseling.ChiselingRecipeDatapackPlugin;
 import com.supermartijn642.rechiseled.screen.preview.ScreenItemRenderer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -22,7 +21,7 @@ import java.util.function.Supplier;
  */
 public class EntryButtonWidget extends AbstractButtonWidget {
 
-    private static final ResourceLocation TEXTURE = RechiseledAE.identifier("textures/screen/entry_buttons.png");
+    public static final Identifier TEXTURE = RechiseledAE.identifier("screen/entry_buttons");
 
     private final int anchorY;
     private final Supplier<DisplayEntry> entry;
@@ -66,10 +65,10 @@ public class EntryButtonWidget extends AbstractButtonWidget {
         if(item != null){
             tooltips.accept(TextComponents.item(item.item()).get());
             if(ClientUtils.getMinecraft().options.advancedItemTooltips){
-                ResourceLocation recipe = display.entry().recipe();
+                Identifier recipe = display.entry().recipe();
                 if(recipe != null)
                     tooltips.accept(TextComponents.translation("rechiseledae.chiseling_pattern_encoder.entry.recipe", TextComponents.string(recipe.toString()).color(ChatFormatting.DARK_GRAY).get()).color(ChatFormatting.GRAY).get());
-                ResourceLocation owner = display.entry().owner();
+                Identifier owner = display.entry().owner();
                 if(!owner.equals(ChiselingRecipeDatapackPlugin.IDENTIFIER))
                     tooltips.accept(TextComponents.translation("rechiseledae.chiseling_pattern_encoder.entry.owner", TextComponents.string(owner.toString()).color(ChatFormatting.DARK_GRAY).get()).color(ChatFormatting.GRAY).get());
             }
@@ -77,22 +76,25 @@ public class EntryButtonWidget extends AbstractButtonWidget {
     }
 
     @Override
-    public void render(WidgetRenderContext context, int mouseX, int mouseY){
+    public void render(WidgetRenderContext context, GuiGraphicsHelper graphics, int mouseX, int mouseY){
         DisplayEntry display = this.entry.get();
 
         boolean hasEntry = display != null;
         boolean selected = hasEntry && this.selectedEntry.get() == display;
         boolean hasCorrectItem = hasEntry && display.hasItem(this.connecting.get());
 
-        ScreenUtils.bindTexture(TEXTURE);
-        ScreenUtils.drawTexture(context.poseStack(), this.x, this.y, this.width, this.height, 0, (selected ? 2 : hasEntry ? hasCorrectItem ? this.isFocused() ? 1 : 0 : this.isFocused() ? 4 : 3 : 0) / 5f, 1, 1 / 5f);
+        graphics.submitSprite(TEXTURE, this.x, this.y, this.width, this.height, p -> p.uv(0, (selected ? 2 : hasEntry ? hasCorrectItem ? this.isFocused() ? 1 : 0 : this.isFocused() ? 4 : 3 : 0) / 5f, 1, 1 / 5f));
     }
 
     @Override
-    public void renderForeground(WidgetRenderContext context, int mouseX, int mouseY){
+    public void renderForeground(WidgetRenderContext context, GuiGraphicsHelper graphics, int mouseX, int mouseY){
         DisplayEntry display = this.entry.get();
         ItemWithWorth item = display == null ? null : display.getItem(this.connecting.get());
-        if(display != null)
-            ScreenItemRenderer.drawItem(context.poseStack(), item.item(), this.x + this.width / 2d, this.y + this.height / 2d, this.width - 4, 0, 0, false);
+        if(item != null){
+            graphics.submitFeatures(
+                this.x, this.y, this.width, this.height,
+                (poseStack, output) -> ScreenItemRenderer.submitItem(poseStack, output, item.item(), this.width / 2d, this.height / 2d, this.width - 4, 0, 0)
+            );
+        }
     }
 }

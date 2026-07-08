@@ -1,13 +1,11 @@
 package com.supermartijn642.rechiseled.ae.chiseling_pattern;
 
-import com.supermartijn642.core.generator.BlockStateGenerator;
-import com.supermartijn642.core.generator.LanguageGenerator;
-import com.supermartijn642.core.generator.ModelGenerator;
-import com.supermartijn642.core.generator.RecipeGenerator;
+import com.supermartijn642.core.generator.*;
 import com.supermartijn642.core.registry.GeneratorRegistrationHandler;
 import com.supermartijn642.rechiseled.Rechiseled;
 import com.supermartijn642.rechiseled.ae.RechiseledAE;
-import net.minecraft.resources.ResourceLocation;
+import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.ChiselingPatternEncoderScreen;
+import com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.widgets.*;
 import net.neoforged.neoforge.common.Tags;
 
 /**
@@ -72,6 +70,32 @@ public class ChiselingPatternDataGenerators {
                     .input('C', Tags.Items.INGOTS_IRON)
                     .input('D', Tags.Items.INGOTS_COPPER)
                     .unlockedBy(Rechiseled.chisel);
+            }
+        });
+        handler.addGenerator(cache -> new ItemInfoGenerator(RechiseledAE.MODID, cache) {
+            @Override
+            public void generate(){
+                this.simpleInfo(RechiseledAE.chiseling_pattern, "item/chiseling_pattern");
+                this.simpleInfo(RechiseledAE.chiseling_pattern_encoder, "block/chiseling_pattern_encoder");
+            }
+        });
+        handler.addGenerator(cache -> new AtlasSourceGenerator(RechiseledAE.MODID, cache) {
+            @Override
+            public void generate(){
+                this.guiAtlas()
+                    .texture(ChiselingPatternEncoderScreen.BACKGROUND)
+                    .texture(ChiselingPatternEncoderScreen.SCROLLER)
+                    .texture(PreviewModeButtonWidget.PREVIEW_BUTTONS)
+                    .texture(ShapeSelectionWidget.SHAPE_BUTTONS)
+                    .texture(ShapeSelectionWidget.BLOCK_ICON)
+                    .texture(ShapeSelectionWidget.STAIRS_ICON)
+                    .texture(ShapeSelectionWidget.SLAB_ICON)
+                    .texture(ConnectingToggleWidget.TOGGLE_BUTTONS)
+                    .texture(ConnectingToggleWidget.ICON_CONNECTED_ON)
+                    .texture(ConnectingToggleWidget.ICON_CONNECTED_OFF)
+                    .texture(EntryButtonWidget.TEXTURE)
+                    .texture(ToggleRotationButton.TEXTURE)
+                    .texture(EncodeButtonWidget.BUTTONS);
             }
         });
     }

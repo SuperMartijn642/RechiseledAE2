@@ -1,7 +1,7 @@
 package com.supermartijn642.rechiseled.ae.chiseling_pattern.screen.widgets;
 
 import com.supermartijn642.core.TextComponents;
-import com.supermartijn642.core.gui.ScreenUtils;
+import com.supermartijn642.core.gui.GuiGraphicsHelper;
 import com.supermartijn642.core.gui.widget.WidgetRenderContext;
 import com.supermartijn642.core.gui.widget.premade.AbstractButtonWidget;
 import com.supermartijn642.core.util.Holder;
@@ -10,7 +10,7 @@ import com.supermartijn642.rechiseled.ae.RechiseledAE;
 import com.supermartijn642.rechiseled.api.chiseling.ChiselingBlockShape;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -20,14 +20,14 @@ import java.util.function.Supplier;
  */
 public class ShapeSelectionWidget extends AbstractButtonWidget {
 
-    private static final ResourceLocation SHAPE_BUTTONS = RechiseledAE.identifier("textures/screen/shape_buttons.png");
-    private static final ResourceLocation BLOCK_ICON = Rechiseled.identifier("textures/screen/icon_1x1.png");
-    private static final ResourceLocation STAIRS_ICON = Rechiseled.identifier("textures/screen/icon_stairs.png");
-    private static final ResourceLocation SLAB_ICON = Rechiseled.identifier("textures/screen/icon_slab.png");
+    public static final Identifier SHAPE_BUTTONS = RechiseledAE.identifier("screen/shape_buttons");
+    public static final Identifier BLOCK_ICON = Rechiseled.identifier("screen/icon_1x1");
+    public static final Identifier STAIRS_ICON = Rechiseled.identifier("screen/icon_stairs");
+    public static final Identifier SLAB_ICON = Rechiseled.identifier("screen/icon_slab");
 
     private final ChiselingBlockShape shape;
     private final Supplier<DisplayEntry> currentEntry;
-    private final ResourceLocation icon;
+    private final Identifier icon;
 
     public ShapeSelectionWidget(int x, int y, ChiselingBlockShape shape, Supplier<DisplayEntry> currentEntry, Runnable onPress){
         super(x, y, 12, 15, onPress);
@@ -58,19 +58,17 @@ public class ShapeSelectionWidget extends AbstractButtonWidget {
     }
 
     @Override
-    public void renderBackground(WidgetRenderContext context, int mouseX, int mouseY){
+    public void renderBackground(WidgetRenderContext context, GuiGraphicsHelper graphics, int mouseX, int mouseY){
         boolean canClick = this.isClickable();
-        ScreenUtils.bindTexture(SHAPE_BUTTONS);
-        ScreenUtils.drawTexture(context.poseStack(), this.x, this.y, this.width, this.height, 0, (canClick ? this.isFocused() ? 1 : 0 : 2) / 3f, 1, 1 / 3f);
+        graphics.submitSprite(SHAPE_BUTTONS, this.x, this.y, this.width, this.height, p -> p.uv(0, (canClick ? this.isFocused() ? 1 : 0 : 2) / 3f, 1, 1 / 3f));
     }
 
     @Override
-    public void render(WidgetRenderContext context, int mouseX, int mouseY){
+    public void render(WidgetRenderContext context, GuiGraphicsHelper graphics, int mouseX, int mouseY){
         DisplayEntry display = this.currentEntry.get();
         if(display != null && display.entry().hasShape(this.shape)){
-            ScreenUtils.bindTexture(this.icon);
             int offset = this.isClickable() ? this.isFocused() ? 1 : 0 : 2;
-            ScreenUtils.drawTexture(context.poseStack(), this.x + 1, this.y + 1 + offset, this.width - 2, this.width - 2);
+            graphics.submitSprite(this.icon, this.x + 1, this.y + 1 + offset, this.width - 2, this.width - 2);
         }
     }
 }
