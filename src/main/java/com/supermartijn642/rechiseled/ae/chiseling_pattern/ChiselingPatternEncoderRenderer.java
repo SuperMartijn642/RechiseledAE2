@@ -2,6 +2,7 @@ package com.supermartijn642.rechiseled.ae.chiseling_pattern;
 
 import com.google.common.base.Suppliers;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.math.Axis;
 import com.supermartijn642.core.ClientUtils;
 import com.supermartijn642.core.render.CustomBlockEntityRenderer;
 import com.supermartijn642.rechiseled.Rechiseled;
@@ -13,7 +14,6 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import org.joml.Quaternionf;
 
 import java.util.function.Supplier;
 
@@ -48,12 +48,12 @@ public class ChiselingPatternEncoderRenderer implements CustomBlockEntityRendere
         poseStack.pushPose();
         poseStack.translate(0.5, 10 / 16f, 0.5);
         // Apply random rotation based on block position
-        poseStack.mulPose(new Quaternionf().rotateY((float)Math.PI * state.rotationOffset / 2));
+        poseStack.rotate(Axis.YP, (float)Math.PI * state.rotationOffset / 2);
         // Render chisel
         poseStack.pushPose();
         poseStack.scale(0.5f, 1f, 0.5f);
         poseStack.translate(0.2, 0, 0.2);
-        poseStack.mulPose(new Quaternionf().rotateX((float)Math.PI / 2));
+        poseStack.rotate(Axis.XP, (float)Math.PI / 2);
         ModelFeatureRenderer.CrumblingOverlay breakingOverlay = context.breakingOverlay();
         state.chiselRenderState.submit(poseStack, output, context.packedLight(), breakingOverlay == null ? OverlayTexture.NO_OVERLAY : breakingOverlay.progress(), 0);
         poseStack.popPose();
@@ -62,7 +62,7 @@ public class ChiselingPatternEncoderRenderer implements CustomBlockEntityRendere
             poseStack.pushPose();
             poseStack.translate(-0.1, 0.125, -0.1);
             poseStack.scale(0.5f, 0.5f, 0.5f);
-            poseStack.mulPose(new Quaternionf().rotateY(0.6f));
+            poseStack.rotate(Axis.YP, 0.6f);
             state.inputRenderState.submit(poseStack, output, context.packedLight(), breakingOverlay == null ? OverlayTexture.NO_OVERLAY : breakingOverlay.progress(), 0);
             poseStack.popPose();
         }

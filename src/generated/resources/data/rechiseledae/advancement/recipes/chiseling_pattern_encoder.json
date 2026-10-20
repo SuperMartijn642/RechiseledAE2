@@ -19,7 +19,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "rechiseledae:chiseling_pattern_encoder"
+        "recipes": "rechiseledae:chiseling_pattern_encoder"
       }
     },
     "recipe_condition": {

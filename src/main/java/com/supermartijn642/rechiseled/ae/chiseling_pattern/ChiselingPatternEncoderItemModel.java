@@ -2,6 +2,7 @@ package com.supermartijn642.rechiseled.ae.chiseling_pattern;
 
 import com.google.common.base.Suppliers;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.math.Axis;
 import com.supermartijn642.core.ClientUtils;
 import com.supermartijn642.rechiseled.Rechiseled;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -14,7 +15,6 @@ import net.minecraft.client.renderer.special.SpecialModelRenderer;
 import net.minecraft.world.entity.ItemOwner;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import org.joml.Quaternionf;
 import org.joml.Vector3fc;
 import org.jspecify.annotations.Nullable;
 
@@ -37,16 +37,16 @@ public class ChiselingPatternEncoderItemModel implements ItemModel {
         public void submit(@Nullable Void argument, PoseStack poseStack, SubmitNodeCollector output, int lightCoords, int overlayCoords, boolean hasFoil, int outlineColor){
             poseStack.pushPose();
             poseStack.translate(0.5, 0.5, 0.5);
-            poseStack.mulPose(new Quaternionf().rotateY((float)Math.PI * 1.5f));
+            poseStack.rotate(Axis.YP, (float)Math.PI * 1.5f);
             poseStack.translate(-0.5, -0.5, -0.5);
             // Render the chisel
             poseStack.translate(0.5, 0.5, 0.5);
-            poseStack.mulPose(new Quaternionf().rotateY(1.1f * (float)Math.PI));
+            poseStack.rotate(Axis.YP, 1.1f * (float)Math.PI);
             poseStack.translate(-0.5, -0.5, -0.5);
             poseStack.translate(0.5, 10 / 16f, 0.5);
             poseStack.scale(0.8f, 1f, 0.8f);
             poseStack.translate(0.1, 0, 0.1);
-            poseStack.mulPose(new Quaternionf().rotateX((float)Math.PI / 2));
+            poseStack.rotate(Axis.XP, (float)Math.PI / 2);
             this.chisel.get().submit(poseStack, output, lightCoords, overlayCoords, outlineColor);
             poseStack.popPose();
         }
